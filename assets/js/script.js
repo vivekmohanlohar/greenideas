@@ -2,8 +2,53 @@
 window.addEventListener('scroll', () => {
   document.querySelector('nav').classList.toggle('window-scroll', window.scrollY > 0);
 });
+
+// Form CTA
 window.addEventListener('scroll', () => {
-  document.querySelector('.form-cta').classList.toggle('form-cta--active', window.scrollY > 1000);
+  const cta = document.querySelector('.form-cta');
+  const form = document.querySelector('#consult-form');
+  const footer = document.querySelector('.footer');
+
+  const scrollY = window.scrollY;
+  const windowHeight = window.innerHeight;
+
+  const formRect = form.getBoundingClientRect();
+  const formTop = formRect.top + scrollY;
+  const formBottom = formRect.bottom + scrollY;
+
+  const footerRect = footer.getBoundingClientRect();
+  const footerTop = footerRect.top + scrollY;
+
+  const scrollBottom = scrollY + windowHeight;
+
+  // Show/hide logic
+  if (
+    scrollY > 100 &&
+    (scrollBottom < formTop || scrollY > formBottom)
+  ) {
+    cta.classList.add('form-cta--active');
+  } else {
+    cta.classList.remove('form-cta--active');
+  }
+
+  // Stop above footer
+  const ctaHeight = cta.offsetHeight;
+
+  if (scrollBottom >= footerTop) {
+    // Lock just above footer
+    cta.classList.add('form-cta--stuck');
+    cta.style.position = 'absolute';
+    cta.style.top = (footerTop - ctaHeight) + 'px';
+    cta.style.left = '0';
+    cta.style.width = '100%';
+  } else {
+    // Back to fixed at bottom
+    cta.classList.remove('form-cta--stuck');
+    cta.style.position = '';
+    cta.style.top = '';
+    cta.style.left = '';
+    cta.style.width = '';
+  }
 });
 
 // Loading animation for the page
