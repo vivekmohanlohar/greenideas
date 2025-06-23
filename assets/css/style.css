@@ -234,7 +234,7 @@ button {
   padding: .5rem 2rem;
   position: relative;
   margin: 1rem 0 0;
-  /* border-top: 2.5px solid #7e7e7e; */
+  border-top: 2.5px solid #7e7e7e;
 }
 
 button a {
@@ -636,9 +636,7 @@ nav.visible {
     transform: rotate(45deg) scale(1.2);
     top: 0.9rem;
     width: 100%;
-    /* Full width when rotated */
-    background: var(--primary-theme);
-  }
+    /* Full width when rotated */  }
 
   .menu-active span:nth-child(2) {
     opacity: 0;
@@ -649,7 +647,6 @@ nav.visible {
     transform: rotate(-45deg) scale(1.2);
     top: 0.9rem;
     width: 100%;
-    background: var(--primary-color);
   }
 
   .menu-active {
@@ -761,7 +758,7 @@ header {
   padding: 0;
   /* background-image: linear-gradient(45deg,
       #00000017, #00000012), url("/greenideasindia/assets/media/header-bg.jpeg"); */
-  background-image: linear-gradient(45deg,
+  background-image: linear-gradient(-45deg,
       #00000037, #000000), url("/assets/media/header-bg.png");
   background-size: cover;
   background-position: center;
