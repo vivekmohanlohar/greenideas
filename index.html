@@ -57,13 +57,6 @@
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Twitter Tags -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="GreenIdeas - Residential Solar Panel Services in India" />
-  <meta name="twitter:description"
-    content="Affordable and expert home solar panel installations across India. Get the best quality and support with GreenIdeas." />
-  <meta name="twitter:image" content="https://greenideas.in/assets/media/twitter-image.jpg" />
-
   <!-- Google Site Verification -->
   <meta name="google-site-verification" content="your-google-site-verification-code" />
 
@@ -111,11 +104,10 @@
         "https://www.facebook.com/greenideasindia",
         "https://www.instagram.com/greenideas_india"
       ],
-      "description": "GreenIdeas provides high-quality residential solar solutions, including installation, maintenance, and expert guidance to help Indian homeowners harness solar energy efficiently."
+      "description": "Power your home with GreenIdeas—trusted for expert solar installations, real savings, and zero-hassle service. Switch to clean energy and save up to 90%."
     }
   </script>
 </head>
-
 
 <body>
 
@@ -143,9 +135,7 @@
           <li><a alt="greenideas" href="#why-us"><span>Why Choose Us</span></a></li>
           <li><a alt="greenideas" href="#consult-form"><span>Free Consultation</span></a></li>
           <li><a alt="greenideas" href="#brands"><span>Brands</span></a></li>
-          <!-- <li><a alt="greenideas" href="#projects"><span>Projects</span></a></li> -->
           <li><a alt="greenideas" href="#reviews"><span>Reviews</span></a></li>
-          <li><a alt="Greenideas Partner Program" href="#solar-partner"><span>Partner Program</span></a></li>
           <li><a alt="Reach Us Greenideas" href="#reach-us"><span>Reach Us</span></a></li>
           <hr class="li-none-desk" style="border: 1px solid black; width: 80%;">
           <div class="logo li-none-desk">
@@ -309,7 +299,6 @@
 
             <button type="submit" id="submitButton" class="btn">Yes! Reduce my electricity bill</button>
           </form>
-          <p id="formStatusMsg" style="color: green; margin-top: 1rem;"></p>
         </div>
 
       </div>
@@ -337,7 +326,6 @@
       </div>
     </div>
   </section>
-
 
   <!-- Google Reviews -->
   <section id="reviews">
@@ -1137,10 +1125,12 @@ h78.747C231.693,100.736,232.77,106.162,232.77,111.694z"></path>
         fullName: document.getElementById('fullName').value,
         phoneNumber: document.getElementById('phoneNumber').value,
         electricityBill: document.querySelector('input[name="electricityBill"]:checked')?.value || '',
-        city: document.getElementById('city').value
+        city: document.getElementById('city').value,
+        sourcePage: 'index-form'  // This will go into "Website Leads"
       };
 
-      fetch('https://script.google.com/macros/s/AKfycbx6XTkWUYOVnvOsDpBfDIuFz10t-_eUK8hRDbDw1A9wj6Poz1BufxcVKuUdbflcr0TeOg/exec', {
+
+      fetch('https://script.google.com/macros/s/AKfycbzGggUkxzvq_7sH2BYMJKXIb1TKllQpPfKy7FaRoyWpsBWpRM6SrPdA5nAfV0EzaKCT7A/exec', {
         method: 'POST',
         body: JSON.stringify(data)
       })
@@ -1154,7 +1144,6 @@ h78.747C231.693,100.736,232.77,106.162,232.77,111.694z"></path>
           console.error(error);
         });
     });
-    document.getElementById("formStatusMsg").textContent = "Submitted successfully!";
   </script>
 
 </body>
