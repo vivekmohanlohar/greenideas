@@ -3,10 +3,13 @@
 
 /* Root Colors */
 :root {
-  --primary-theme: #00C563;
-  --primary-dark: #107b46;
+  --primary-theme: #00C763;
+  --primary-dark: #074828;
+  /* --primary-theme: #00C563;
+  --primary-dark: #107b46; */
   /* green */
-  --secondary-theme: #FFCD02;
+  /* --secondary-theme: #fecc00; */
+  --secondary-theme: #ffd115;
   /* yellow */
   --background: #FFFFFF;
   --accent: #6dcca1;
@@ -222,7 +225,7 @@ a {
 
 /* button */
 button {
-  background: linear-gradient(45deg, #00C563, #00C563, #107b46);
+  background: linear-gradient(90deg, #00C563, #00C563, var(--primary-dark));
   border-radius: 590px;
   transition: all 500ms ease-in-out;
   font-weight: 800;
@@ -231,7 +234,7 @@ button {
   padding: .5rem 2rem;
   position: relative;
   margin: 1rem 0 0;
-  border-top: 2.5px solid #7e7e7e;
+  /* border-top: 2.5px solid #7e7e7e; */
 }
 
 button a {
