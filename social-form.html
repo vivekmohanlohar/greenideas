@@ -41,16 +41,13 @@
     <meta name="twitter:image" content="https://greenideas.in/assets/media/twitter-image.jpg" />
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://greenideas.in" />
+    <link rel="canonical" href="https://greenideas.in/social-form.html" />
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180"
-        href="https://greenideas.in/assets/media/favicon/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32"
-        href="https://greenideas.in/assets/media/favicon/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16"
-        href="https://greenideas.in/assets/media/favicon/favicon-16x16.png" />
-    <link rel="manifest" href="https://greenideas.in/assets/media/favicon/site.webmanifest" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/media/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/media/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/media/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="./assets/media/favicon/site.webmanifest" />
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="./assets/css/style.css" />
@@ -121,12 +118,12 @@
 
     <div class="form-cta">
         Save on your electricity Bills
-        <button class="cta-button">
+        <button class="cta-button cta-button-nav">
             <a href="#consult-form">Book a free consultation</a>
         </button>
     </div>
 
-    <nav class="visible">
+    <nav class="visible" style="background-color: white;">
         <div class="nav-container nav__container container">
             <!-- website logo -->
             <a class="logo" href="https://greenideas.in/" alt="Greenideas Solar Insntallations Logo greenideas.in">
@@ -140,6 +137,7 @@
                     <li><a alt="Green Ideas Brands Collaboration" href="#brands"><span>Brands</span></a></li>
                     <li><a alt="Green Ideas customer Reviews" href="#reviews"><span>Reviews</span></a></li>
                     <li><a alt="Reach Us Greenideas" href="#reach-us"><span>Reach Us</span></a></li>
+                    <button class="cta-button cta-button-nav"><a href="#consult-form">Schedule a FREE Visit</a></button>
                     <hr class="li-none-desk" style="border: 1px solid black; width: 80%;">
                     <div class="logo li-none-desk">
                         <img src="./assets/media/logo.png" alt="greenideas Website Logo">
@@ -177,81 +175,77 @@
     </nav>
 
     <!-- Consultation Form Starts here -->
-    <section id="consult-form">
+    <section id="consult-form" class="social-page-form">
+
+        <div class="consult-head social-consult-head"
+            style="margin: 0; padding: 0; max-width: 90%; margin: 2rem auto 1rem;">
+            <h4 style="text-align: left;"><span>Switch to Solar</span> in Akola, Khamgaon & Shegaon at zero investment!
+            </h4>
+            <p style="text-align: left; margin: .7rem 0 0;">Government subsidy covers your down payment, and monthly
+                solar savings cover
+                your EMIs.</p>
+        </div>
+        <div class="social-header-img">
+            <img style="margin: 0;" src="./assets/media/social-header.jpg"
+                alt="Solar panel installation in Maharashtra">
+            <p class="bottom-bar" style="margin:0; color: #074828;">Leading Home Solar Company</p>
+        </div>
+
         <div class="container">
-            <div class="quote_form">
-                <div class="consult-head">
-                    <h4>Schedule a <br><span>free consultation</span><br> with us today</h4>
-                    <p>Get genuine advice from our solar experts.
-                        No pressure, book only if you are satisfied!</p>
-                </div>
-                <div class="form-container">
-                    <form id="contactForm"
-                        action="https://script.google.com/macros/s/AKfycbx6XTkWUYOVnvOsDpBfDIuFz10t-_eUK8hRDbDw1A9wj6Poz1BufxcVKuUdbflcr0TeOg/exec"
-                        method="POST">
-                        <div class="form-group">
-                            <label for="fullName">Full Name</label>
-                            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name">
+            <div class="form-container" style="margin: 1.4rem 0 0;">
+                <form id="contactForm"
+                    action="https://script.google.com/macros/s/AKfycbx6XTkWUYOVnvOsDpBfDIuFz10t-_eUK8hRDbDw1A9wj6Poz1BufxcVKuUdbflcr0TeOg/exec"
+                    method="POST">
+                    <h3 style="color: #000;">Book a FREE Solar Consultation</h3>
+                    <p style="color: #343434; font-size: 14px; margin: 0 0 .8rem;">And save up to ₹78000 with subsidy
+                    </p>
+
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phoneNumber">WhatsApp Number *</label>
+                        <input type="tel" id="phoneNumber" name="phoneNumber" required
+                            placeholder="Enter your WhatsApp number">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city">City *</label>
+                        <input type="text" id="city" name="city" required placeholder="Enter your city">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Monthly Electricity Bill</label>
+                        <div class="bill-options">
+                            <input type="radio" id="bill1" name="electricityBill" value="Less than ₹1500" hidden>
+                            <label for="bill1" class="bill-label">Less than ₹1500</label>
+
+                            <input type="radio" id="bill2" name="electricityBill" value="₹1500 - ₹2500" hidden>
+                            <label for="bill2" class="bill-label">₹1500 - ₹2500</label>
+
+                            <input type="radio" id="bill3" name="electricityBill" value="₹2500 - ₹4000" hidden>
+                            <label for="bill3" class="bill-label">₹2500 - ₹4000</label>
+
+                            <input type="radio" id="bill4" name="electricityBill" value="₹4000 - ₹8000" hidden>
+                            <label for="bill4" class="bill-label">₹4000 - ₹8000</label>
+
+                            <input type="radio" id="bill5" name="electricityBill" value="More than ₹8000" hidden>
+                            <label for="bill5" class="bill-label">More than ₹8000</label>
                         </div>
+                    </div>
 
-                        <div class="form-group">
-                            <label for="phoneNumber">WhatsApp Number *</label>
-                            <input type="tel" id="phoneNumber" name="phoneNumber" required
-                                placeholder="Enter your WhatsApp number">
-                        </div>
-
-                        <div class="form-group">
-                            <label>Monthly Electricity Bill</label>
-                            <div class="bill-options">
-                                <input type="radio" id="bill1" name="electricityBill" value="Less than ₹1500" hidden>
-                                <label for="bill1" class="bill-label">Less than ₹1500</label>
-
-                                <input type="radio" id="bill2" name="electricityBill" value="₹1500 - ₹2500" hidden>
-                                <label for="bill2" class="bill-label">₹1500 - ₹2500</label>
-
-                                <input type="radio" id="bill3" name="electricityBill" value="₹2500 - ₹4000" hidden>
-                                <label for="bill3" class="bill-label">₹2500 - ₹4000</label>
-
-                                <input type="radio" id="bill4" name="electricityBill" value="₹4000 - ₹8000" hidden>
-                                <label for="bill4" class="bill-label">₹4000 - ₹8000</label>
-
-                                <input type="radio" id="bill5" name="electricityBill" value="More than ₹8000" hidden>
-                                <label for="bill5" class="bill-label">More than ₹8000</label>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="city">City *</label>
-                            <input type="text" id="city" name="city" required placeholder="Enter your city">
-                        </div>
-
-                        <button type="submit" id="submitButton" class="btn">Yes! Reduce my electricity bill</button>
-                        <input type="hidden" name="sourcePage" value="social-media-form">
-                    </form>
-                </div>
-
+                    <button type="submit" id="submitButton" class="btn">Yes! Reduce my electricity bill</button>
+                    <input type="hidden" name="sourcePage" value="social-media-form">
+                </form>
             </div>
+
+        </div>
 
         </div>
     </section>
-
-    <header id="home" style="margin-top: 0;">
-        <div class="hero-container">
-            <div class="hero-text-holder">
-                <h1>Switch to Solar and Save up to 90% on Your Electricity Bills</h1>
-                <!-- <h2>Rooftop solar made simple. We don't just sell solar — we provide peace of mind.</h2>
-        <p>Save up to 90% on your electricity bills with rust-proof structures, top-tier components, and 5 years of free
-          maintenance — all with almost zero paperwork.</p> -->
-                <button class="cta-button">
-                    <a href="#consult-form">Get a Quote</a>
-                </button>
-            </div>
-
-            <div class="hero-image-holder">
-                <img src="./assets/media/header-couple.png" alt="Solar panel installation in Maharashtra">
-            </div>
-        </div>
-    </header>
 
     <p class="bottom-bar">Trusted by <span>50+</span> Happy Families</p>
     <div style="height: 150px; display: flex; align-items: center; justify-content: center;">

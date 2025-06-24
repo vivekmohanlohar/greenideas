@@ -132,6 +132,12 @@ body {
   border-radius: 50px;
 }
 
+@media screen and (max-width: 700px) {
+  .form-cta .cta-button-nav {
+    margin: .4rem 0 0
+  }
+}
+
 .form-cta button a {
   color: #fff;
 }
@@ -246,6 +252,10 @@ button a {
 a.btn {
   display: inline-block;
   margin-block: 1rem 0;
+}
+
+.cta-button-nav {
+  margin: 0;
 }
 
 /* button:hover::after {
@@ -636,7 +646,8 @@ nav.visible {
     transform: rotate(45deg) scale(1.2);
     top: 0.9rem;
     width: 100%;
-    /* Full width when rotated */  }
+    /* Full width when rotated */
+  }
 
   .menu-active span:nth-child(2) {
     opacity: 0;
@@ -759,7 +770,7 @@ header {
   /* background-image: linear-gradient(45deg,
       #00000017, #00000012), url("/greenideasindia/assets/media/header-bg.jpeg"); */
   background-image: linear-gradient(-45deg,
-      #00000037, #000000), url("/assets/media/header-bg.png");
+      #0000005e, #00000057), url("/assets/media/header-bg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1333,7 +1344,7 @@ select:focus,
   background-color: transparent;
   transition: all 0.3s ease;
   font-weight: 600;
-  font-size: .8rem 12.8px;
+  font-size: .8rem;
 }
 
 .bill-label:hover {
@@ -1355,6 +1366,32 @@ input[type="radio"]:checked+.bill-label {
   padding-inline: .6rem;
   background: var(--primary-theme);
   border: none;
+}
+
+/*  Special styling for social page */
+#consult-form.social-page-form {
+  /* background: linear-gradient(90deg, var(--primary-theme), var(--primary-dark),var(--primary-dark));
+   */
+  background: var(--primary-dark);
+}
+
+.consult-head img {
+  border-radius: 5px;
+  height: 200px;
+  margin: 1rem 0 0;
+}
+
+.social-consult-head h4 span {
+  font-weight: 600;
+}
+
+.social-header-img {
+  position: relative;
+}
+
+.social-header-img p {
+  position: absolute;
+  bottom: 0;
 }
 
 /* <<<<<<<<< Why Choose Us Section >>>>>>>>> */

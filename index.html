@@ -7,10 +7,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
   <!-- Title and Meta Description -->
-  <title>GreenIdeas - Switch to Solar and Save up to 90% on Your Electricity Bills</title>
+  <title>GreenIdeas - Switch to Solar and Save 90% on Electricity Bills</title>
 
   <!-- Meta Title -->
-  <meta name="title" content="GreenIdeas - Switch to Solar and Save up to 90% on Your Electricity Bills" />
+  <meta name="title" content="GreenIdeas - Switch to Solar and Save 90% on Electricity Bills" />
 
   <!-- Meta Description -->
   <meta name="description"
@@ -44,10 +44,10 @@
   <link rel="canonical" href="https://greenideas.in" />
 
   <!-- Favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="https://greenideas.in/assets/media/favicon/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="https://greenideas.in/assets/media/favicon/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="https://greenideas.in/assets/media/favicon/favicon-16x16.png" />
-  <link rel="manifest" href="https://greenideas.in/assets/media/favicon/site.webmanifest" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/media/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/media/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/media/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="./assets/media/favicon/site.webmanifest" />
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="./assets/css/style.css" />
@@ -133,10 +133,12 @@
       <div class="nav__navigation">
         <ul>
           <li><a alt="greenideas" href="#why-us"><span>Why Choose Us</span></a></li>
-          <li><a alt="greenideas" href="#consult-form"><span>Free Consultation</span></a></li>
           <li><a alt="greenideas" href="#brands"><span>Brands we use</span></a></li>
           <li><a alt="greenideas" href="#reviews"><span>Reviews</span></a></li>
           <li><a alt="Reach Us Greenideas" href="#reach-us"><span>Reach Us</span></a></li>
+          <button class="cta-button cta-button-nav"><a href="#consult-form" style="margin: 0;">Schedule a FREE
+              Visit</a></button>
+
           <hr class="li-none-desk" style="border: 1px solid black; width: 80%;">
           <div class="logo li-none-desk">
             <img src="./assets/media/logo.png" alt="greenideas Website Logo">
@@ -273,6 +275,11 @@
             </div>
 
             <div class="form-group">
+              <label for="city">City *</label>
+              <input type="text" id="city" name="city" required placeholder="Enter your city">
+            </div>
+
+            <div class="form-group">
               <label>Monthly Electricity Bill</label>
               <div class="bill-options">
                 <input type="radio" id="bill1" name="electricityBill" value="Less than ₹1500" hidden>
@@ -290,11 +297,6 @@
                 <input type="radio" id="bill5" name="electricityBill" value="More than ₹8000" hidden>
                 <label for="bill5" class="bill-label">More than ₹8000</label>
               </div>
-            </div>
-
-            <div class="form-group">
-              <label for="city">City *</label>
-              <input type="text" id="city" name="city" required placeholder="Enter your city">
             </div>
 
             <button type="submit" id="submitButton" class="btn">Yes! Reduce my electricity bill</button>
