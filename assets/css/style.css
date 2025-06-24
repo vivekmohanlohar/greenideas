@@ -1375,6 +1375,23 @@ input[type="radio"]:checked+.bill-label {
   background: var(--primary-dark);
 }
 
+@media screen and (min-width: 800px) {
+  .social-page-form {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .social-page-form .quoteform {
+    width: 40%;
+    display: grid;
+    place-items: center;
+  }
+
+  .social-header-img {
+    display: none;
+  }
+}
+
 .consult-head img {
   border-radius: 5px;
   height: 200px;
@@ -1768,7 +1785,7 @@ input[type="radio"]:checked+.bill-label {
   height: 1.3rem;
   padding: 5px 10px;
   border-radius: 5px;
-  border: 1px solid var(--secondary-theme);
+  border: 1px solid var(--primary-dark);
 }
 
 .location-box svg {
