@@ -1,6 +1,5 @@
 User-agent: *
-Disallow: /social-form.html
 Disallow: /solarpartner.html
-Allow: /
+Disallow: /social-form.html
 
 Sitemap: https://greenideas.in/sitemap.xml
