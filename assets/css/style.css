@@ -1308,7 +1308,8 @@ header {
 
 @media screen and (max-width: 500px) {
   .popup-content {
-    width: 80%;
+    max-width: 90%;
+    padding: 1rem;
   }
 }
 
