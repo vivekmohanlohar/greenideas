@@ -1324,7 +1324,7 @@ header {
 }
 
 .popup-content h3 {
-  color: #3BB09E;
+  color: var(--primary-theme);
   margin-bottom: 10px;
 }
 

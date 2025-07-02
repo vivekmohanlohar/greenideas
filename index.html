@@ -325,7 +325,8 @@
 
             <div class="form-group">
               <label for="phoneNumber">WhatsApp Number *</label>
-              <input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="Enter your WhatsApp number">
+              <input type="tel" id="phoneNumber" name="phoneNumber" required pattern="[0-9]{10}" maxlength="10"
+                placeholder="Enter your 10-digit WhatsApp number">
             </div>
 
             <div class="form-group">
@@ -1226,6 +1227,12 @@ h78.747C231.693,100.736,232.77,106.162,232.77,111.694z"></path>
 
       // Immediately show a loader (optional)
       const submitButton = document.getElementById('submitButton');
+      const phoneNumber = document.getElementById('phoneNumber').value.trim();
+      if (!/^\d{10}$/.test(phoneNumber)) {
+        alert("Please enter a valid 10-digit WhatsApp number.");
+        return;
+      }
+
       submitButton.disabled = true;
       submitButton.textContent = 'Submitting...';
 
