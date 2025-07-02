@@ -252,7 +252,7 @@
   </section>
 
   <!-- Consultation Form Starts here -->
-  <section id="consult-form">
+  <!-- <section id="consult-form">
     <div class="container">
       <div class="quote_form">
         <div class="consult-head">
@@ -306,7 +306,71 @@
       </div>
 
     </div>
+  </section> -->
+
+  <section id="consult-form">
+    <div class="container">
+      <div class="quote_form">
+        <div class="consult-head">
+          <h4>Schedule a <br><span>free consultation</span><br> with us today</h4>
+          <p>Get genuine advice from our solar experts.
+            No pressure, book only if you are satisfied!</p>
+        </div>
+        <div class="form-container" id="FormJump">
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input type="text" id="fullName" name="fullName" placeholder="Enter your full name">
+            </div>
+
+            <div class="form-group">
+              <label for="phoneNumber">WhatsApp Number *</label>
+              <input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="Enter your WhatsApp number">
+            </div>
+
+            <div class="form-group">
+              <label for="city">City *</label>
+              <input type="text" id="city" name="city" required placeholder="Enter your city">
+            </div>
+
+            <div class="form-group">
+              <label>Monthly Electricity Bill</label>
+              <div class="bill-options">
+                <input type="radio" id="bill1" name="electricityBill" value="Less than ₹1500" hidden>
+                <label for="bill1" class="bill-label">Less than ₹1500</label>
+
+                <input type="radio" id="bill2" name="electricityBill" value="₹1500 - ₹2500" hidden>
+                <label for="bill2" class="bill-label">₹1500 - ₹2500</label>
+
+                <input type="radio" id="bill3" name="electricityBill" value="₹2500 - ₹4000" hidden>
+                <label for="bill3" class="bill-label">₹2500 - ₹4000</label>
+
+                <input type="radio" id="bill4" name="electricityBill" value="₹4000 - ₹8000" hidden>
+                <label for="bill4" class="bill-label">₹4000 - ₹8000</label>
+
+                <input type="radio" id="bill5" name="electricityBill" value="More than ₹8000" hidden>
+                <label for="bill5" class="bill-label">More than ₹8000</label>
+              </div>
+            </div>
+
+            <button type="submit" id="submitButton" class="btn">Yes! Reduce my electricity bill</button>
+          </form>
+        </div>
+      </div>
+    </div>
   </section>
+
+  <div id="popupSuccess" class="popup">
+    <div class="popup-content">
+      <h3>🎉 You’ve Just Made a Smart Move! 🎉</h3>
+      <p>Sit back and relax—our expert will contact you shortly. No pressure, just helpful guidance and real savings
+        ahead! 😊</p>
+      <button onclick="closePopup()" class="close-btn">Okay</button>
+    </div>
+  </div>
+
+
+
 
   <!-- Top Brands Section -->
   <section id="brands">
@@ -1138,7 +1202,18 @@ h78.747C231.693,100.736,232.77,106.162,232.77,111.694z"></path>
 
   <!-- Google Sheet Integration For Form Submissions -->
   <script>
-    document.getElementById('contactForm').addEventListener('submit', function (e) {
+    function showPopup() {
+      document.getElementById('popupSuccess').style.display = 'flex';
+    }
+
+    function closePopup() {
+      document.getElementById('popupSuccess').style.display = 'none';
+    }
+
+    // Improved fast-response submit handler
+    const contactForm = document.getElementById('contactForm');
+
+    contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
 
       const data = {
@@ -1146,9 +1221,13 @@ h78.747C231.693,100.736,232.77,106.162,232.77,111.694z"></path>
         phoneNumber: document.getElementById('phoneNumber').value,
         electricityBill: document.querySelector('input[name="electricityBill"]:checked')?.value || '',
         city: document.getElementById('city').value,
-        sourcePage: 'index-form'  // This will go into "Website Leads"
+        sourcePage: 'index-form'
       };
 
+      // Immediately show a loader (optional)
+      const submitButton = document.getElementById('submitButton');
+      submitButton.disabled = true;
+      submitButton.textContent = 'Submitting...';
 
       fetch('https://script.google.com/macros/s/AKfycbzGggUkxzvq_7sH2BYMJKXIb1TKllQpPfKy7FaRoyWpsBWpRM6SrPdA5nAfV0EzaKCT7A/exec', {
         method: 'POST',
@@ -1156,12 +1235,16 @@ h78.747C231.693,100.736,232.77,106.162,232.77,111.694z"></path>
       })
         .then(response => response.text())
         .then(result => {
-          alert("Submitted successfully!");
-          document.getElementById('contactForm').reset();
+          contactForm.reset();
+          showPopup();
+          submitButton.disabled = false;
+          submitButton.textContent = 'Yes! Reduce my electricity bill';
         })
         .catch(error => {
           alert("Something went wrong. Please try again.");
           console.error(error);
+          submitButton.disabled = false;
+          submitButton.textContent = 'Yes! Reduce my electricity bill';
         });
     });
   </script>
