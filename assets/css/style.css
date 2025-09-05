@@ -1440,11 +1440,11 @@ input[type="radio"]:checked+.bill-label {
   border: none;
 }
 
-/*  Special styling for social page */
+/*  Social page styling for social page social-form */
 #consult-form.social-page-form {
-  /* background: linear-gradient(90deg, var(--primary-theme), var(--primary-dark),var(--primary-dark));
-   */
   background: var(--primary-dark);
+  padding: 5rem 0 5rem 0;
+  margin: 0;
 }
 
 @media screen and (min-width: 800px) {
@@ -1559,163 +1559,6 @@ input[type="radio"]:checked+.bill-label {
 
 .content-container p {
   font-size: .9rem;
-}
-
-/* <<<<<<<< Project section starts here >>>>>>>> */
-.project-section {
-  padding: 60px 20px;
-  background: var(--primary-theme);
-}
-
-.project-section h2 {
-  color: white;
-}
-
-.project-section .h3-theme {
-  opacity: .9;
-}
-
-.city-tabs {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-content: center;
-  margin: 20px 0;
-  gap: 1rem;
-}
-
-.city-tab {
-  background: #ffffff;
-  color: white;
-  border: 2px solid #3BB09E;
-  width: 100%;
-  aspect-ratio: 1/1;
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  background-image: linear-gradient(45deg,
-      #00000067, #00000087), url("/greenideas-main/assets/media/maintenance.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.city-tab.project-active {
-  transform: scale(1.1);
-}
-
-.city-content {
-  display: none;
-  /* animation: fadeIn 0.5s ease-in-out; */
-}
-
-.city-content.project-active {
-  display: block;
-}
-
-.project-description {
-  animation: fadeIn 0.5s ease-in-out;
-  font-size: 1rem;
-  margin-bottom: 15px;
-  color: #444;
-}
-
-.slider-wrapper {
-  animation: fadeIn 0.5s ease-in-out;
-  position: relative;
-  overflow: hidden;
-  max-width: fit-content;
-}
-
-.project-slider {
-  display: flex;
-  gap: 1rem;
-  transition: transform 0.5s ease;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  max-width: 500px;
-}
-
-.project-slider img {
-  max-width: 100%;
-  height: auto;
-  scroll-snap-align: start;
-  border-radius: 12px;
-}
-
-.project-slider::-webkit-scrollbar {
-  height: 8px;
-}
-
-.project-slider::-webkit-scrollbar-track {
-  background: #0a0707;
-  border-radius: 10px;
-}
-
-.project-slider::-webkit-scrollbar-thumb {
-  background: #3BB09E;
-  border-radius: 10px;
-}
-
-.project-slider::-webkit-scrollbar-thumb:hover {
-  background: #2a8b7b;
-}
-
-.slider-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 2;
-  border-radius: 50%;
-}
-
-.slider-btn.prev {
-  left: 10px;
-}
-
-.slider-btn.next {
-  right: 10px;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (max-width: 768px) {
-  .project-slider {
-    flex-wrap: nowrap;
-    overflow-x: scroll;
-  }
-
-  .slider-btn {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 700px) {
-  .city-tabs {
-    justify-content: left;
-  }
-
-  .city-content.project-active {
-    display: grid;
-    grid-template-columns: 1fr 1.1fr;
-    gap: 2rem;
-  }
 }
 
 /* <<<<<<<<  Brands Section Starts Here >>>>>>>> */
