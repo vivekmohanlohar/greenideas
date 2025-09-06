@@ -267,7 +267,6 @@ document.addEventListener('DOMContentLoaded', function () {
   updateGalleryPosition();
 });
 
-
 // drop down facilities
 document.querySelectorAll('.facility-header').forEach(item => {
   item.addEventListener('click', () => {
@@ -275,9 +274,6 @@ document.querySelectorAll('.facility-header').forEach(item => {
     parent.classList.toggle('open');
   });
 });
-
-
-
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -351,7 +347,6 @@ document.addEventListener('DOMContentLoaded', function () {
   startAutoScroll();
 });
 
-
 document.addEventListener("DOMContentLoaded", () => {
   const faqItems = document.querySelectorAll(".faq-item");
 
@@ -385,8 +380,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
-
 const billButtons = document.querySelectorAll('.bill-button');
 const billInput = document.getElementById('electricityBill');
 
@@ -395,17 +388,5 @@ billButtons.forEach(button => {
     billButtons.forEach(btn => btn.classList.remove('selected'));
     button.classList.add('selected');
     billInput.value = button.dataset.value;
-  });
-});
-
-// project slider
-
-document.querySelectorAll(".city-tab").forEach(button => {
-  button.addEventListener("click", () => {
-    document.querySelectorAll(".city-tab").forEach(btn => btn.classList.remove("project-active"));
-    document.querySelectorAll(".city-content").forEach(content => content.classList.remove("project-active"));
-
-    button.classList.add("project-active");
-    document.getElementById(button.dataset.city).classList.add("project-active");
   });
 });

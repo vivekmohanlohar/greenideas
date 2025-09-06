@@ -771,8 +771,6 @@ header {
   height: 75vh;
   margin: 80px 0 0 0;
   padding: 0;
-  /* background-image: linear-gradient(45deg,
-      #00000017, #00000012), url("/greenideasindia/assets/media/header-bg.jpeg"); */
   background-image: linear-gradient(-45deg,
       #0000005e, #00000057), url("/assets/media/header-bg.jpg");
   background-size: cover;
@@ -1496,6 +1494,13 @@ input[type="radio"]:checked+.bill-label {
   width: 90%;
 }
 
+@media screen and (min-width: 768px) {
+  .structure-img img {
+    width: 50%;
+  }
+
+}
+
 .why-us-content {
   margin-top: 20px;
   text-align: center;
@@ -2153,6 +2158,9 @@ input[type="radio"]:checked+.bill-label {
 .rate-us-google {
   text-align: center;
 }
+
+/* About Green Ideas */
+
 
 /* <<<<<<<< Footer Starts Here >>>>>>>> */
 footer {
