@@ -772,7 +772,7 @@ header {
   margin: 80px 0 0 0;
   padding: 0;
   background-image: linear-gradient(-45deg,
-      #0000005e, #00000057), url("/assets/media/header-bg.jpg");
+      #0000005e, #00000057), url("/assets/media/greenideas_solar_system.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1236,12 +1236,13 @@ header {
   background: var(--primary-theme);
 }
 
-.consult-head h4 {
+.consult-head h4, .consult-head h1 {
   font-size: 3rem;
   line-height: 1.2;
 }
 
-.consult-head h4 span {
+.consult-head h4 span,
+.consult-head h1 span {
   color: var(--secondary-theme);
 }
 
@@ -1282,7 +1283,7 @@ header {
     text-align: center;
   }
 
-  .consult-head h4 {
+  .consult-head h4, .consult-head h1 {
     font-size: 2rem;
   }
 
@@ -1468,7 +1469,7 @@ input[type="radio"]:checked+.bill-label {
   margin: 1rem 0 0;
 }
 
-.social-consult-head h4 span {
+.social-consult-head h1 span {
   font-weight: 600;
 }
 
