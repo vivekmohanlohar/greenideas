@@ -79,7 +79,7 @@
         !function (f, b, e, v, n, t, s) {
             if (f.fbq) return; n = f.fbq = function () {
                 n.callMethod ?
-                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
             if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
             n.queue = []; t = b.createElement(e); t.async = !0;
@@ -94,10 +94,13 @@
             src="https://www.facebook.com/tr?id=773602182316775&ev=PageView&noscript=1" /></noscript>
     <!-- End Meta Pixel Code -->
 
+
 </head>
 
 <body>
-
+    <script>
+        fbq('track', 'Lead');
+    </script>
     <!-- ||||||||| Whatsapp Icnon at bottom right |||||||||| -->
     <!-- <a href="https://wa.me/+919011221800/" class="btn-whatsapp-pulse">
     <i class="fa-brands fa-whatsapp"></i>
@@ -904,6 +907,8 @@ h78.747C231.693,100.736,232.77,106.162,232.77,111.694z"></path>
                 .then(result => {
                     contactForm.reset();
                     showPopup();
+
+                    fbq('track', 'Lead');
                     submitButton.disabled = false;
                     submitButton.textContent = 'Yes! Reduce my electricity bill';
                 })
