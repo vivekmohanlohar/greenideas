@@ -231,7 +231,7 @@ a {
 /* button */
 button {
   background: linear-gradient(90deg, #00C563, #00C563, var(--primary-dark));
-  border-radius: 590px;
+  border-radius: 50px;
   transition: all 500ms ease-in-out;
   font-weight: 800;
   font-family: var(--font-mono);
