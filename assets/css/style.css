@@ -169,13 +169,14 @@ section {
   padding: 3rem 0;
 }
 
-/* section with large margin */
-/* .section--margin {
-  padding: 8rem 0;
-  } */
-
 .container {
   max-width: 70%;
+  margin: 0 auto;
+}
+
+/* Google Review Widget */
+.elfsight-app-9b76eaca-743b-4d30-9374-040ed2278be5 {
+  max-width: 90%;
   margin: 0 auto;
 }
 
@@ -183,7 +184,12 @@ section {
   section {
     min-height: fit-content;
     margin: 3rem 0;
+  }
 
+  /* Google Review Widget */
+  .elfsight-app-9b76eaca-743b-4d30-9374-040ed2278be5 {
+    max-width: 70%;
+    margin: 0 auto;
   }
 }
 
@@ -281,7 +287,8 @@ button:hover::before {
 } */
 
 /* +++++ section heading starts here +++++ */
-.section-heading {
+.section-heading,
+.dNtlyB {
   font-size: 1.7rem;
   line-height: 1.2;
   color: var(--normal-text);
@@ -448,7 +455,7 @@ button:hover::before {
 
 /* +++++ nav section starts here +++++ */
 nav {
-  text-transform: uppercase;
+  text-transform: capitalize;
   height: 80px;
   width: 100%;
   position: fixed;
@@ -522,6 +529,12 @@ nav.visible {
 @media screen and (min-width: 1100px) {
   .nav-container {
     max-width: 90%;
+  }
+}
+
+@media screen and (min-width: 908px) {
+  #quick-link-nav {
+    display: none;
   }
 }
 
@@ -772,7 +785,7 @@ header {
   margin: 80px 0 0 0;
   padding: 0;
   background-image: linear-gradient(-45deg,
-      #0000005e, #00000057), url("/assets/media/greenideas_solar_system.webp");
+      #0000005e, #00000057), url("/assets/media/17656316928972.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1236,7 +1249,8 @@ header {
   background: var(--primary-theme);
 }
 
-.consult-head h4, .consult-head h1 {
+.consult-head h4,
+.consult-head h1 {
   font-size: 3rem;
   line-height: 1.2;
 }
@@ -1283,7 +1297,8 @@ header {
     text-align: center;
   }
 
-  .consult-head h4, .consult-head h1 {
+  .consult-head h4,
+  .consult-head h1 {
     font-size: 2rem;
   }
 
