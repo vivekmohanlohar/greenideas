@@ -390,3 +390,18 @@ billButtons.forEach(button => {
     billInput.value = button.dataset.value;
   });
 });
+
+// Introduction to Green ideas solar
+  const accordion = document.querySelector('.accordion');
+  const header = accordion.querySelector('.accordion-header');
+  const content = accordion.querySelector('.accordion-content');
+
+  header.addEventListener('click', () => {
+    accordion.classList.toggle('active');
+
+    if (content.style.maxHeight) {
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + 'px';
+    }
+  });
