@@ -989,12 +989,11 @@ header {
 }
 
 .hero-image-holder img {
-  width: 210px;
-  aspect-ratio: 1/1;
+  width: 300px;
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translate(-50%, 0px);
+  transform: translate(-53%, 0px);
 }
 
 .hero-image-holder i {
