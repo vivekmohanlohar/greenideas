@@ -796,6 +796,7 @@ header {
     background-image: linear-gradient(-45deg,
         #0000005e, #00000057), url("/assets/media/hero-desktop.webp");
   }
+
   .hero-image-holder img {
     width: 300px;
   }
@@ -2218,6 +2219,7 @@ input[type="radio"]:checked+.bill-label {
   width: 19px;
   height: 19px;
 }
+
 .accordion-icon {
   width: 19px;
   transition: transform 0.35s ease;
@@ -2241,11 +2243,12 @@ input[type="radio"]:checked+.bill-label {
   transition: max-height 0.45s ease;
   list-style: disc;
 }
+
 .accordion-content ul li {
   list-style: disc;
 }
 
-.accordion-content h2{
+.accordion-content h2 {
   font-size: 20px;
 }
 
