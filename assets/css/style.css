@@ -1620,90 +1620,348 @@ input[type="radio"]:checked+.bill-label {
 }
 
 /* <<<<<<<< Review Section Starts Here >>>>>>>> */
-#reviews {
-  text-align: center;
+:root {
+  --gi-green: #00A651;
+  --gi-dark: #111827;
+  --gi-grey: #6b7280;
+  --gi-light-bg: #f9fafb;
+  --gi-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
 
-.review-wrapper {
-  display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: 2rem;
-  align-items: center;
-  justify-content: center;
-}
-
-.review-wrapper .video-wrapper {
+#gi-reviews-wrapper {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--gi-light-bg);
+  padding: 70px 20px;
   width: 100%;
-  height: 315px;
-  display: none;
-}
-
-.review-holder {
-  background: #fff;
-  padding: 30px;
-  max-height: fit-content;
-  max-width: 500px;
-  border-radius: 5px;
-  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.4);
-  margin: 30px auto 0;
-  border: 1px solid var(--primary-theme);
+  overflow: hidden;
   position: relative;
 }
 
-.review-holder .dots {
-  display: none;
+#gi-reviews-wrapper * {
+  box-sizing: border-box;
 }
 
-.review-holder::after {
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 5px;
-  background: var(--primary-theme);
+/* --- Header --- */
+.gi-rev-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+  gap: 12px;
+  text-align: center;
 }
 
-.review-holder::before {
-  top: 0;
-  left: 0;
-  width: calc(100% + 0px);
-  height: calc(100% + 0px);
-  z-index: -1;
-  border: 1px solid var(--primary-theme);
-  border-radius: 5px;
-  transform: rotate(5deg);
+.gi-google-logo-main {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
 }
 
-.review-holder .slide img {
-  width: 70px;
-  margin: 0;
+.gi-header-stars {
+  color: #FFC107;
+  font-size: 1.2rem;
+  letter-spacing: 3px;
 }
 
-.star-rating {
-  color: gold;
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+.gi-header-rating {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--gi-dark);
+}
+
+.gi-header-rating span {
+  color: var(--gi-grey);
+  font-weight: 400;
+  font-size: 0.95rem;
+}
+
+/* --- Carousel --- */
+.gi-rev-carousel-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gi-rev-track-container {
+  overflow: hidden;
+  padding: 20px 10px;
+  cursor: grab;
+}
+
+.gi-rev-track-container:active {
+  cursor: grabbing;
+}
+
+.gi-rev-track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  gap: 24px;
+}
+
+/* --- Card --- */
+.gi-rev-card {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  min-width: 100%;
+  box-shadow: var(--gi-shadow);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .gi-rev-card {
+    min-width: calc(50% - 12px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .gi-rev-card {
+    min-width: calc(33.333% - 16px);
+  }
+}
+
+/* Top Section: User + Google Icon */
+.gi-rev-top {
+  display: flex;
+  justify-content: space-between;
+  /* Pushes Google icon to right */
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.gi-rev-user {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.gi-rev-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #e8f5e9;
+  color: var(--gi-green);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  flex-shrink: 0;
 }
 
-.customer-review {
-  font-style: italic;
-  margin-bottom: 5px;
-  font-size: 14px;
-  color: var(--paragraph);
+.gi-rev-meta h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--gi-dark);
 }
 
-.customer-info {
-  color: var(--normal-text);
+.gi-rev-details {
+  font-size: 0.8rem;
+  color: var(--gi-grey);
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gi-rev-details i {
+  font-size: 0.75rem;
+  color: var(--gi-green);
+}
+
+/* The small Google G in card top-right */
+.gi-card-google-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  opacity: 0.9;
+}
+
+.gi-rev-stars-small {
+  color: #FFC107;
+  font-size: 0.8rem;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+.gi-rev-text {
+  color: #374151;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.gi-rev-readmore-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-top: 10px;
+  color: var(--gi-grey);
+  font-size: 0.85rem;
   font-weight: 500;
-  margin: 10px 0 0 0;
+  cursor: pointer;
+  text-decoration: underline;
+  align-self: flex-start;
 }
 
-.customer-name {
-  font-weight: bold;
+.gi-rev-readmore-btn:hover {
+  color: var(--gi-dark);
 }
+
+/* --- Buttons --- */
+.gi-rev-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  border: 1px solid #eee;
+  color: var(--gi-dark);
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.gi-rev-btn:hover {
+  background: var(--gi-green);
+  color: white;
+  border-color: var(--gi-green);
+}
+
+.gi-rev-prev {
+  left: -20px;
+}
+
+.gi-rev-next {
+  right: -20px;
+}
+
+/* --- Dots Tracker --- */
+.gi-rev-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  gap: 8px;
+}
+
+.gi-rev-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d1d5db;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gi-rev-dot.active {
+  background: var(--gi-green);
+  width: 24px;
+  /* Elongated active dot */
+  border-radius: 4px;
+}
+
+/* --- Modal --- */
+.gi-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  backdrop-filter: blur(3px);
+}
+
+.gi-modal-overlay.open {
+  display: flex;
+  opacity: 1;
+}
+
+.gi-modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.gi-modal-overlay.open .gi-modal-content {
+  transform: translateY(0);
+}
+
+.gi-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: #999;
+}
+
+.gi-modal-author {
+  margin-bottom: 15px;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.gi-modal-text {
+  line-height: 1.6;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  /* .gi-rev-btn {
+    display: none;
+  } */
+
+  #gi-reviews-wrapper {
+    padding: 50px 0;
+  }
+
+  .gi-rev-track-container {
+    padding: 20px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
 
 /* <<<<<<<<< Green Ideas Operation Locations >>>>>>>>> */
 
