@@ -140,6 +140,7 @@ body {
 
 .form-cta button a {
   color: #fff;
+  padding: 5px 17px;
 }
 
 .form-cta button::after {
@@ -234,6 +235,71 @@ a {
   font-weight: 500;
 }
 
+/* =========================================
+           2. THE MAGIC CLASS (Copy this part)
+           ========================================= */
+
+/* The moving light definition */
+@keyframes shine-move {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 200%;
+  }
+}
+
+/* Base class - ADD THIS TO YOUR BUTTON */
+.shine-effect {
+  position: relative !important;
+  overflow: hidden !important;
+  /* Vital: Masks the light to the button shape */
+  z-index: 100;
+  /* Vital: Creates a stacking context */
+}
+
+.shine-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+
+  /* The "Beam" of light */
+  background: linear-gradient(to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.5) 50%,
+      /* 0.6 opacity white center */
+      rgba(255, 255, 255, 0) 100%);
+
+  /* PRO TIP: This makes it look like light, not paint */
+  mix-blend-mode: overlay;
+
+  transform: skewX(-25deg);
+  pointer-events: none;
+  /* Allows clicks to pass through */
+  z-index: 11000;
+}
+
+/* Automatic Loop Animation */
+.shine-loop::after {
+  animation: shine-move 3s infinite linear;
+}
+
+/* Optional: Makes the shine slightly sharper/more intense */
+.shine-intense::after {
+  background: linear-gradient(to right,
+      transparent 0%,
+      rgba(255, 255, 255, 0.9) 50%,
+      transparent 100%);
+  width: 30px;
+  /* Narrower beam */
+}
+
+
+/* button */
 /* button */
 button {
   background: linear-gradient(90deg, #00C563, #00C563, var(--primary-dark));
@@ -242,16 +308,20 @@ button {
   font-weight: 800;
   font-family: var(--font-mono);
   display: inline-block;
-  padding: .5rem 2rem;
+  /* padding: .5rem 2rem; */
   position: relative;
   margin: 1rem 0 0;
-  border-top: 2.5px solid #7e7e7e;
+  /* border-top: 2.5px solid #7e7e7e; */
 }
 
 button a {
-  color: white;
-  font-size: 1rem;
-  font-weight: 600;
+    display: flex;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    max-width: 100%;
+    height: 100%;
+    padding: 5px 17px;
 }
 
 a.btn {
@@ -262,29 +332,6 @@ a.btn {
 .cta-button-nav {
   margin: 0;
 }
-
-/* button:hover::after {
-  bottom: -1px;
-  right: -4px;
-  width: 4px;
-  background: var(--primary-theme);
-  height: 100%;
-  border-bottom: 3px solid var(--primary-theme);
-  border-right: 3px solid var(--primary-theme);
-  border-top-right-radius: 4px;
-}
-
-button:hover::before {
-  bottom: -4px;
-  right: -4px;
-  height: 4px;
-  background: var(--primary-theme);
-  width: calc(100% + 4px);
-  border-bottom: 5px solid var(--primary-theme);
-  border-right: 5px solid var(--primary-theme);
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-} */
 
 /* +++++ section heading starts here +++++ */
 .section-heading,
@@ -1287,6 +1334,10 @@ header {
   margin: 2rem 0 0 0;
   align-items: center;
 }
+form button {
+
+  padding: 5px 17px;
+}
 
 @media screen and (max-width: 768px) {
   #consult-form {
@@ -1620,21 +1671,19 @@ input[type="radio"]:checked+.bill-label {
 }
 
 /* <<<<<<<< Review Section Starts Here >>>>>>>> */
-:root {
-  --gi-green: #00A651;
-  --gi-dark: #111827;
-  --gi-grey: #6b7280;
-  --gi-light-bg: #f9fafb;
-  --gi-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-}
 
 #gi-reviews-wrapper {
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  background-color: var(--gi-light-bg);
+  background-color: var(--light-bg);
   padding: 70px 20px;
   width: 100%;
   overflow: hidden;
   position: relative;
+}
+
+#gi-reviews-wrapper i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #gi-reviews-wrapper * {
@@ -1647,7 +1696,7 @@ input[type="radio"]:checked+.bill-label {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 50px;
+  margin-bottom: 3cta0px;
   gap: 12px;
   text-align: center;
 }
@@ -1659,21 +1708,24 @@ input[type="radio"]:checked+.bill-label {
 }
 
 .gi-header-stars {
-  color: #FFC107;
-  font-size: 1.2rem;
-  letter-spacing: 3px;
+  color: var(--secondary-theme);
+  font-size: 1rem;
+  display: flex;
+  gap: 1.3rem;
+  margin: 7px 0 0 0;
 }
 
 .gi-header-rating {
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--gi-dark);
+  color: var(--normal-text);
 }
 
 .gi-header-rating span {
-  color: var(--gi-grey);
+  color: var(--paragraph);
   font-weight: 400;
   font-size: 0.95rem;
+  opacity: 0.8;
 }
 
 /* --- Carousel --- */
@@ -1695,7 +1747,8 @@ input[type="radio"]:checked+.bill-label {
 
 .gi-rev-track {
   display: flex;
-  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  /* Smoother slide */
   gap: 24px;
 }
 
@@ -1710,6 +1763,7 @@ input[type="radio"]:checked+.bill-label {
   flex-direction: column;
   position: relative;
   height: auto;
+  border: 1px solid rgba(0, 0, 0, 0.02);
 }
 
 @media (min-width: 768px) {
@@ -1728,7 +1782,6 @@ input[type="radio"]:checked+.bill-label {
 .gi-rev-top {
   display: flex;
   justify-content: space-between;
-  /* Pushes Google icon to right */
   align-items: flex-start;
   margin-bottom: 15px;
 }
@@ -1737,14 +1790,18 @@ input[type="radio"]:checked+.bill-label {
   display: flex;
   align-items: center;
   gap: 15px;
+  max-width: 85%;
+  /* Prevent overlapping with Google G */
 }
 
 .gi-rev-avatar {
   width: 45px;
   height: 45px;
+  min-width: 45px;
+  /* Prevent squishing */
   border-radius: 50%;
   background-color: #e8f5e9;
-  color: var(--gi-green);
+  color: var(--primary-theme);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1757,22 +1814,29 @@ input[type="radio"]:checked+.bill-label {
 .gi-rev-meta h4 {
   margin: 0;
   font-size: 1rem;
-  font-weight: 700;
-  color: var(--gi-dark);
+  font-weight: 500;
+  color: var(--normal-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .gi-rev-details {
   font-size: 0.8rem;
-  color: var(--gi-grey);
-  margin-top: 2px;
+  color: var(--paragraph);
+  margin-top: 0px;
+  margin-left: 5px;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
+  flex-wrap: wrap;
 }
 
 .gi-rev-details i {
   font-size: 0.75rem;
-  color: var(--gi-green);
+  color: var(--primary-theme);
+  flex-shrink: 0;
+  margin-right: .3rem;
 }
 
 /* The small Google G in card top-right */
@@ -1781,18 +1845,20 @@ input[type="radio"]:checked+.bill-label {
   height: 22px;
   object-fit: contain;
   opacity: 0.9;
+  flex-shrink: 0;
 }
 
 .gi-rev-stars-small {
-  color: #FFC107;
-  font-size: 0.8rem;
-  margin-bottom: 12px;
-  letter-spacing: 1px;
+  color: var(--secondary-theme);
+  font-size: 0.9rem;
+  margin: 10px 0 20px 10px;
+  display: flex;
+  gap: 1.15rem;
 }
 
 .gi-rev-text {
-  color: #374151;
-  font-size: 0.95rem;
+  color: #606060;
+  font-size: 0.9rem;
   line-height: 1.6;
   display: -webkit-box;
   -webkit-line-clamp: 4;
@@ -1802,21 +1868,24 @@ input[type="radio"]:checked+.bill-label {
   flex-grow: 1;
 }
 
+/* Designed Read More Button */
 .gi-rev-readmore-btn {
-  background: none;
+  background: rgba(0, 199, 99, 0.08);
   border: none;
-  padding: 0;
-  margin-top: 10px;
-  color: var(--gi-grey);
+  padding: 8px 16px;
+  border-radius: 6px;
+  margin-top: 15px;
+  color: var(--primary-dark);
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
-  text-decoration: underline;
   align-self: flex-start;
+  transition: all 0.2s ease;
 }
 
 .gi-rev-readmore-btn:hover {
-  color: var(--gi-dark);
+  background: var(--primary-theme);
+  color: white;
 }
 
 /* --- Buttons --- */
@@ -1829,7 +1898,7 @@ input[type="radio"]:checked+.bill-label {
   border-radius: 50%;
   background: white;
   border: 1px solid #eee;
-  color: var(--gi-dark);
+  color: var(--normal-text);
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -1837,12 +1906,14 @@ input[type="radio"]:checked+.bill-label {
   justify-content: center;
   transition: all 0.2s ease;
   z-index: 10;
+  padding: 0;
+  margin: 0;
 }
 
 .gi-rev-btn:hover {
-  background: var(--gi-green);
+  background: var(--primary-theme);
   color: white;
-  border-color: var(--gi-green);
+  border-color: var(--primary-theme);
 }
 
 .gi-rev-prev {
@@ -1853,28 +1924,40 @@ input[type="radio"]:checked+.bill-label {
   right: -20px;
 }
 
-/* --- Dots Tracker --- */
+/* --- Dots Tracker (Smart Fade) --- */
 .gi-rev-dots {
   display: flex;
   justify-content: center;
-  margin-top: 25px;
-  gap: 8px;
+  align-items: center;
+  margin-top: 30px;
+  gap: 6px;
+  height: 12px;
+  max-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 200px;
 }
 
 .gi-rev-dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #d1d5db;
+  background: #e5e7eb;
   cursor: pointer;
   transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
 .gi-rev-dot.active {
-  background: var(--gi-green);
-  width: 24px;
+  background: var(--primary-theme);
+  width: 20px;
   /* Elongated active dot */
   border-radius: 4px;
+}
+
+/* Optional: Fade distant dots for visual polish */
+.gi-rev-dot:not(.active) {
+  opacity: 0.6;
 }
 
 /* --- Modal --- */
@@ -1919,30 +2002,32 @@ input[type="radio"]:checked+.bill-label {
 
 .gi-modal-close {
   position: absolute;
-  top: 15px;
+  top: 0;
   right: 20px;
-  font-size: 1.5rem;
+  padding: 0;
+  font-size: 1.8rem;
   cursor: pointer;
   border: none;
   background: none;
-  color: #999;
+  color: var(--accent);
 }
 
 .gi-modal-author {
   margin-bottom: 15px;
   font-weight: 700;
   font-size: 1.1rem;
+  color: var(--normal-text);
 }
 
 .gi-modal-text {
   line-height: 1.6;
-  color: #333;
+  color: var(--paragraph);
 }
 
 @media (max-width: 768px) {
-  /* .gi-rev-btn {
+  .gi-rev-btn {
     display: none;
-  } */
+  }
 
   #gi-reviews-wrapper {
     padding: 50px 0;
@@ -1950,6 +2035,19 @@ input[type="radio"]:checked+.bill-label {
 
   .gi-rev-track-container {
     padding: 20px;
+  }
+
+  .gi-header-stars {
+    font-size: 0.9rem;
+  }
+
+  .gi-modal-overlay {
+    padding: 0;
+  }
+
+  .gi-modal-content {
+    padding: 20px;
+    max-width: 85%;
   }
 }
 

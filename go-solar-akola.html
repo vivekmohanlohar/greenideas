@@ -93,7 +93,32 @@
     <noscript><img height="1" width="1" style="display:none"
             src="https://www.facebook.com/tr?id=773602182316775&ev=PageView&noscript=1" /></noscript>
     <!-- End Meta Pixel Code -->
-
+    <!-- Tailwind CSS for new sections -->
+    <!-- <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        green: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#074828', // Brand Dark Green
+                            900: '#052e16',
+                        },
+                        brandYellow: '#ffcd04',
+                        brandBright: '#00c853'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script> -->
 
 </head>
 
@@ -108,8 +133,8 @@
 
     <div class="form-cta">
         Save on your electricity Bills
-        <button class="cta-button cta-button-nav">
-            <a href="#consult">Book a free consultation</a>
+        <button class="cta-button cta-button-nav shine-effect shine-loop">
+            <a href="#consult" class="shine-effect shine-loop">Book a free consultation ></a>
         </button>
     </div>
 
@@ -259,58 +284,54 @@
     <!-- Why Greenideas over other installers -->
     <section id="why-us">
         <div class="container">
-            <h4 class="section-heading">Why Choose GreenIdeas?</h4><br><br>
+            <h4 class="section-heading">Why Choose GreenIdeas?</h4><br>
             <div class="structure-img">
-                <img class="structure-img" src="./assets/media/the_structure.webp"
-                    alt="Green Ideas Special Rooftop Structure">
+
+                <img class="structure-img" src="./assets/media/the_structure.webp" alt="Why Choose Us">
             </div>
             <div class="why-us-content">
                 <div class="content-container">
 
                     <div class="content-box">
                         <img src="./assets/media/subsidy.svg" alt="Government-approved solar subsidy icon">
-                        <h5>Up to ₹78,000 Subsidy</h5>
-                        <p class="small-desc">Get government-approved subsidies and save big on your solar investment.
-                        </p>
+                        <h5>Up to ₹78,000 Direct Subsidy</h5>
+                        <p class="small-desc">Save big with confirmed Government-approved financial support.</p>
                     </div>
 
                     <div class="content-box">
                         <img src="./assets/media/maintenance.svg" alt="Free solar service and maintenance icon">
-                        <h5>5 Years Free Service & Maintenance</h5>
-                        <p class="small-desc">Enjoy worry-free usage with zero service maintenance charges for the first
-                            5 years.
-                        </p>
+                        <h5>5 Years Zero Service Maintenance</h5>
+                        <p class="small-desc">We take care of everything. Enjoy free service for the first 5 years.</p>
                     </div>
 
                     <div class="content-box">
                         <img src="./assets/media/emi.svg" alt="Bank loan and EMI available icon for solar installation">
-                        <h5>EMI/Bank Loan Available</h5>
-                        <p class="small-desc">Flexible financing options available to make solar affordable for
-                            everyone.</p>
+                        <h5>Easy EMI</h5>
+                        <p class="small-desc">Solar for every home! Flexible bank loans and EMI options available.</p>
                     </div>
 
                     <div class="content-box">
-                        <img src="./assets/media/cyclone.svg" alt="Cyclone-proof rooftop solar installation icon">
-                        <h5>Cyclone-Proof Safe Rooftop Solar</h5>
-                        <p class="small-desc">Our installations are engineered to withstand winds up to 170 km/h.</p>
+                        <img src="./assets/media/cyclone.svg" alt="Storm-proof rooftop solar installation icon">
+                        <h5>Storm-Proof</h5>
+                        <p class="small-desc">Heavy-duty structures safe for 170 km/h winds.</p>
                     </div>
 
                     <div class="content-box">
-                        <img src="./assets/media/rust.svg" alt="Rust-free and leak-proof solar anchoring icon">
-                        <h5>100% Leak-Proof & Rust-Free Structure</h5>
-                        <p class="small-desc">
-                            Hilti chemical anchoring provides guaranteed leak-proofing, and hot-dip coating keeps the
-                            structure
-                            rust-free.
-                        </p>
+                        <img src="./assets/media/rust.svg" alt="Leak-proof solar anchoring icon">
+                        <h5>Guaranteed Leak-Proof</h5>
+                        <p class="small-desc">Engineered chemical anchoring ensures zero leakage into your property.</p>
                     </div>
 
                     <div class="content-box">
                         <img src="./assets/media/8hrs.svg" alt="Solar panel installation completed in 8 hours icon">
-                        <h5>Installed in just 8 hours</h5>
-                        <p class="small-desc">Our trained crews assemble and install your rooftop solar in just 8 hours
-                            from start
-                            to finish.</p>
+                        <h5>Super-Fast Installation</h5>
+                        <p class="small-desc">Get your solar system installation in just 8 hours.</p>
+                    </div>
+
+                    <div class="content-box">
+                        <img style="width: 4rem;" src="./assets/media/approval.jpg" alt="Immediate EMI approval icon">
+                        <h5>Immediate EMI Approval</h5>
+                        <p class="small-desc">No waiting! Get instant EMI approval during your solar consultation.</p>
                     </div>
 
                 </div>
@@ -355,53 +376,56 @@
     </section>
 
 
-
-<!-- Google Reviews Carousel Section 
-
-
-    <div id="gi-reviews-wrapper">
-        <div class="gi-rev-header">
-            <img src="google.webp" alt="Google" class="gi-google-logo-main">
-            <div class="gi-header-stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-            </div>
-            <div class="gi-header-rating">
-                5.0 <span>based on reviews</span>
-            </div>
+    <section id="reviews">
+        <h2 class="section-heading">What our Customers Say</h2><br><br>
+        <div class="container">
+            <iframe width="100%"
+                src="https://www.youtube.com/embed/mXJcFjalz3w?si=oND-WM2_rCj1FHDk&rel=0&modestbranding=1"
+                title="Green Ideas Customer Review"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
         </div>
-
-        <div class="gi-rev-carousel-container">
-            <button class="gi-rev-btn gi-rev-prev"><i class="fas fa-chevron-left"></i></button>
-            <button class="gi-rev-btn gi-rev-next"><i class="fas fa-chevron-right"></i></button>
-
-            <div class="gi-rev-track-container" id="giTrackContainer">
-                <div class="gi-rev-track" id="giReviewsTrack">
-  
+        <div id="gi-reviews-wrapper">
+            <div class="gi-rev-header">
+                <!-- Updated Path -->
+                <img src="./assets/media/google.webp" alt="Google" class="gi-google-logo-main">
+                <div class="gi-header-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="gi-header-rating">
+                    5.0 <span>based on reviews</span>
                 </div>
             </div>
 
+            <div class="gi-rev-carousel-container">
+                <button class="gi-rev-btn gi-rev-prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="gi-rev-btn gi-rev-next"><i class="fas fa-chevron-right"></i></button>
 
-            <div class="gi-rev-dots" id="giReviewsDots"></div>
+                <div class="gi-rev-track-container" id="giTrackContainer">
+                    <div class="gi-rev-track" id="giReviewsTrack">
+                        <!-- Javascript populates this -->
+                    </div>
+                </div>
+
+                <!-- Dots Container -->
+                <div class="gi-rev-dots" id="giReviewsDots"></div>
+            </div>
         </div>
-    </div>
 
-    ------- Read More Modal --
-    <div class="gi-modal-overlay" id="giReviewModal">
-        <div class="gi-modal-content">
-            <button class="gi-modal-close">&times;</button>
-            <div class="gi-modal-author" id="giModalAuthor"></div>
-            <div class="gi-modal-text" id="giModalText"></div>
+        <!-- Read More Modal -->
+        <div class="gi-modal-overlay" id="giReviewModal">
+            <div class="gi-modal-content">
+                <button class="gi-modal-close">&times;</button>
+                <div class="gi-modal-author" id="giModalAuthor"></div>
+                <div class="gi-modal-text" id="giModalText"></div>
+            </div>
         </div>
-    </div>
-
--->
-
-
-
+    </section>
 
     <!-- Asking to Rate us on Google -->
     <div class="rate-us-google container">
@@ -436,6 +460,7 @@
                     We’re committed to provide easier, faster, strongest solar installtions. We are working hard so you
                     dont have
                     to worry about anything.</p><br>
+
                 <!-- TRUCK ANIMATION -->
                 <div class="loader">
                     <div class="truckWrapper">
@@ -495,7 +520,67 @@ h78.747C231.693,100.736,232.77,106.162,232.77,111.694z"></path>
                     </div>
                 </div>
             </div>
-            <div class="locations">
+
+            <div
+                class="relative w-full aspect-[4/3] bg-gray-50 rounded-3xl border border-gray-200 shadow-inner overflow-hidden flex items-center justify-center p-4 group cursor-default">
+                <!-- Subtle Grid Background -->
+                <div class="absolute inset-0 opacity-20"
+                    style="background-image: radial-gradient(#22c55e 1.5px, transparent 1.5px); background-size: 24px 24px;">
+                </div>
+
+                <!-- Connection Line SVG -->
+                <svg class="absolute inset-0 w-full h-full text-green-300 opacity-70 pointer-events-none"
+                    viewBox="0 0 400 300" preserveAspectRatio="none">
+                    <!-- Curved dashed line connecting the 3 dots -->
+                    <path d="M 80 200 Q 200 80 320 220" fill="none" stroke="currentColor" stroke-width="3"
+                        stroke-dasharray="8 8" class="animate-pulse" />
+                </svg>
+
+                <!-- Location 1: Khamgaon -->
+                <div class="absolute" style="left: 15%; top: 62%;">
+                    <div class="relative group/pin">
+                        <div
+                            class="absolute -inset-3 bg-green-400 rounded-full opacity-30 group-hover/pin:opacity-70 animate-ping">
+                        </div>
+                        <div class="relative w-4 h-4 bg-brandBright border-2 border-white rounded-full shadow-md z-10">
+                        </div>
+                        <div
+                            class="absolute top-6 left-1/2 -translate-x-1/2 bg-white px-4 py-2 rounded-xl shadow-[0_4px_20px_rgb(0,0,0,0.08)] border border-gray-100 font-bold text-gray-800 text-sm whitespace-nowrap transition-transform transform group-hover/pin:-translate-y-1">
+                            Khamgaon
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Location 2: Shegaon (Center) -->
+                <div class="absolute" style="left: 48%; top: 25%;">
+                    <div class="relative group/pin">
+                        <div class="absolute -inset-3 bg-green-400 rounded-full opacity-40 group-hover/pin:opacity-80 animate-ping"
+                            style="animation-delay: 0.5s;"></div>
+                        <div class="relative w-5 h-5 bg-green-700 border-2 border-white rounded-full shadow-md z-10">
+                        </div>
+                        <div
+                            class="absolute top-7 left-1/2 -translate-x-1/2 bg-white px-4 py-2 rounded-xl shadow-[0_4px_20px_rgb(0,0,0,0.08)] border border-gray-100 font-bold text-gray-800 text-sm whitespace-nowrap transition-transform transform group-hover/pin:-translate-y-1">
+                            Shegaon <span class="text-xs text-brandYellow ml-1"><i class="fa-solid fa-star"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Location 3: Akola -->
+                <div class="absolute" style="left: 77%; top: 70%;">
+                    <div class="relative group/pin">
+                        <div class="absolute -inset-3 bg-green-400 rounded-full opacity-30 group-hover/pin:opacity-70 animate-ping"
+                            style="animation-delay: 1s;"></div>
+                        <div class="relative w-4 h-4 bg-brandBright border-2 border-white rounded-full shadow-md z-10">
+                        </div>
+                        <div
+                            class="absolute top-6 left-1/2 -translate-x-1/2 bg-white px-4 py-2 rounded-xl shadow-[0_4px_20px_rgb(0,0,0,0.08)] border border-gray-100 font-bold text-gray-800 text-sm whitespace-nowrap transition-transform transform group-hover/pin:-translate-y-1">
+                            Akola
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- <div class="locations">
                 <div class="location-box">
                     <svg width="800px" height="800px" viewBox="0 0 32 32" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -568,8 +653,8 @@ h78.747C231.693,100.736,232.77,106.162,232.77,111.694z"></path>
                     </svg>
                     <p class="location-name">Akola</p>
                 </div>
+            </div> -->
             </div>
-        </div>
     </section>
 
     <div class="form-cta-spacer"></div>
@@ -949,9 +1034,9 @@ h78.747C231.693,100.736,232.77,106.162,232.77,111.694z"></path>
                 });
         });
     </script>
-<script>
-            document.addEventListener('DOMContentLoaded', function() {
-            
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
             // --- 1. REVIEWS DATA (Updated Text) ---
             const reviewsData = [
                 {
@@ -1037,14 +1122,14 @@ h78.747C231.693,100.736,232.77,106.162,232.77,111.694z"></path>
             const modalText = document.getElementById('giModalText');
             const closeModal = document.querySelector('.gi-modal-close');
 
-            if(!track) return;
+            if (!track) return;
 
             // --- 3. RENDER REVIEWS ---
             reviewsData.forEach((review, index) => {
-                const initials = review.name.split(' ').map(n => n[0]).join('').substring(0,2);
-                
+                const initials = review.name.split(' ').map(n => n[0]).join('').substring(0, 2);
+
                 let starsHtml = '';
-                for(let i=0; i<5; i++) {
+                for (let i = 0; i < 5; i++) {
                     starsHtml += i < review.rating ? '<i class="fas fa-star"></i> ' : '<i class="far fa-star"></i> ';
                 }
 
@@ -1094,24 +1179,24 @@ h78.747C231.693,100.736,232.77,106.162,232.77,111.694z"></path>
             // --- 5. CAROUSEL LOGIC ---
             let currentIndex = 0;
             let autoSlideInterval;
-            
+
             function updateCarousel() {
                 const cards = document.querySelectorAll('.gi-rev-card');
-                if(cards.length === 0) return;
-                
+                if (cards.length === 0) return;
+
                 const cardWidth = cards[0].offsetWidth;
                 const gap = 24;
-                
+
                 // Determine visible items
                 let perPage = 1;
-                if(window.innerWidth >= 1024) perPage = 3;
-                else if(window.innerWidth >= 768) perPage = 2;
+                if (window.innerWidth >= 1024) perPage = 3;
+                else if (window.innerWidth >= 768) perPage = 2;
 
                 const maxIndex = cards.length - perPage;
-                
+
                 // Safety check
-                if(currentIndex > maxIndex) currentIndex = maxIndex;
-                if(currentIndex < 0) currentIndex = 0;
+                if (currentIndex > maxIndex) currentIndex = maxIndex;
+                if (currentIndex < 0) currentIndex = 0;
 
                 const moveAmount = (cardWidth + gap) * currentIndex;
                 track.style.transform = `translateX(-${moveAmount}px)`;
@@ -1125,7 +1210,7 @@ h78.747C231.693,100.736,232.77,106.162,232.77,111.694z"></path>
                 // Button State
                 prevBtn.style.opacity = currentIndex === 0 ? '0.3' : '1';
                 prevBtn.style.pointerEvents = currentIndex === 0 ? 'none' : 'all';
-                
+
                 nextBtn.style.opacity = currentIndex >= maxIndex ? '0.3' : '1';
                 nextBtn.style.pointerEvents = currentIndex >= maxIndex ? 'none' : 'all';
             }
@@ -1133,16 +1218,16 @@ h78.747C231.693,100.736,232.77,106.162,232.77,111.694z"></path>
             function moveSlide(direction) {
                 const cards = document.querySelectorAll('.gi-rev-card');
                 let perPage = 1;
-                if(window.innerWidth >= 1024) perPage = 3;
-                else if(window.innerWidth >= 768) perPage = 2;
-                
+                if (window.innerWidth >= 1024) perPage = 3;
+                else if (window.innerWidth >= 768) perPage = 2;
+
                 const maxIndex = cards.length - perPage;
 
-                if(direction === 'next') {
-                    if(currentIndex < maxIndex) currentIndex++;
-                    else currentIndex = 0; 
+                if (direction === 'next') {
+                    if (currentIndex < maxIndex) currentIndex++;
+                    else currentIndex = 0;
                 } else {
-                    if(currentIndex > 0) currentIndex--;
+                    if (currentIndex > 0) currentIndex--;
                     else currentIndex = maxIndex;
                 }
                 updateCarousel();
@@ -1161,22 +1246,22 @@ h78.747C231.693,100.736,232.77,106.162,232.77,111.694z"></path>
 
             container.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
             container.addEventListener('mouseleave', startAutoSlide);
-            
+
             // Touch Swipe
             let touchStartX = 0;
             let touchEndX = 0;
-            
+
             container.addEventListener('touchstart', e => {
                 touchStartX = e.changedTouches[0].screenX;
                 clearInterval(autoSlideInterval);
-            }, {passive: true});
-            
+            }, { passive: true });
+
             container.addEventListener('touchend', e => {
                 touchEndX = e.changedTouches[0].screenX;
-                if(touchEndX < touchStartX - 50) moveSlide('next');
-                if(touchEndX > touchStartX + 50) moveSlide('prev');
+                if (touchEndX < touchStartX - 50) moveSlide('next');
+                if (touchEndX > touchStartX + 50) moveSlide('prev');
                 startAutoSlide();
-            }, {passive: true});
+            }, { passive: true });
 
             // --- 6. MODAL ---
             document.querySelectorAll('.gi-rev-readmore-btn').forEach(btn => {
@@ -1198,14 +1283,14 @@ h78.747C231.693,100.736,232.77,106.162,232.77,111.694z"></path>
 
             closeModal.addEventListener('click', hideModal);
             modal.addEventListener('click', (e) => {
-                if(e.target === modal) hideModal();
+                if (e.target === modal) hideModal();
             });
 
             startAutoSlide();
             window.addEventListener('resize', updateCarousel);
             setTimeout(updateCarousel, 100);
         });
-</script>
+    </script>
 
 
 </body>

@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AERO TUFF™ Solar Structure | Green Ideas</title>
+    <meta name="description"
+        content="AERO TUFF™ — Green Ideas' flagship aerodynamically optimized solar mounting structure. Built to withstand 170 kmph winds. Hilti chemical anchoring protects your roof from leakage." />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* ========= RESET & BASE ========= */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --green-dark: #074828;
+            --green-mid: #0a6636;
+            --green-light: #12a354;
+            --yellow: #ffcd04;
+            --yellow-dim: #e6b800;
+            --off-white: #f5f5f2;
+            --dark: #0d0d0d;
+            --mid-gray: #3a3a3a;
+            --text-light: #6b6b6b;
+            --white: #ffffff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--white);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        /* ========= NAV CTA BUTTON ========= */
+        .cta-button a {
+            background: var(--yellow);
+            color: var(--green-dark);
+            font-weight: 700;
+            padding: .35rem .9rem;
+            border-radius: 100px;
+            text-decoration: none;
+            font-size: .82rem;
+            transition: background .2s;
+        }
+
+        .cta-button a:hover {
+            background: var(--yellow-dim);
+        }
+
+        /* ========= NAV ========= */
+        nav.visible {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: white !important;
+            box-shadow: 0 2px 16px rgba(0, 0, 0, .07);
+            transform: translateY(0);
+            transition: transform .35s cubic-bezier(.4, 0, .2, 1), box-shadow .35s;
+        }
+
+        nav.visible.nav-hidden {
+            transform: translateY(-100%);
+        }
+
+        /* offset body for fixed nav */
+        body {
+            padding-top: 64px;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: .9rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo img {
+            height: 35px;
+        }
+
+        .nav__navigation ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav__navigation ul li a {
+            text-decoration: none;
+            color: var(--mid-gray);
+            font-size: .88rem;
+            font-weight: 500;
+            transition: color .2s;
+        }
+
+        .nav__navigation ul li a:hover {
+            color: var(--green-dark);
+        }
+
+        .menuBtn {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 1100;
+            position: relative;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+
+        .menuBtn span {
+            width: 24px;
+            height: 2px;
+            background: var(--dark);
+            display: block;
+            transition: transform .3s, opacity .3s;
+        }
+
+        .menuBtn.open span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .menuBtn.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menuBtn.open span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        /* Mobile drawer */
+        .mobile-drawer {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--white);
+            z-index: 1050;
+            flex-direction: column;
+            padding: 5rem 2rem 2rem;
+            overflow-y: auto;
+        }
+
+        .mobile-drawer.open {
+            display: flex;
+        }
+
+        .mobile-drawer ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .mobile-drawer ul li {
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .mobile-drawer ul li a {
+            display: block;
+            padding: 1rem 0;
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 1.15rem;
+            font-weight: 600;
+            font-family: 'Syne', sans-serif;
+            transition: color .2s;
+        }
+
+        .mobile-drawer ul li a:hover {
+            color: var(--green-dark);
+        }
+
+        .mobile-drawer .drawer-cta {
+            margin-top: 2rem;
+            background: var(--green-dark);
+            color: var(--white);
+            font-weight: 700;
+            font-size: .95rem;
+            padding: .9rem 1.6rem;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .mobile-drawer .drawer-bottom {
+            margin-top: auto;
+            padding-top: 2rem;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .mobile-drawer .drawer-contact {
+            font-size: .85rem;
+            color: var(--text-light);
+            line-height: 1.9;
+        }
+
+        .mobile-drawer .drawer-contact a {
+            color: var(--green-dark);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .drawer-close {
+            position: absolute;
+            top: 1.2rem;
+            right: 1.4rem;
+            width: 40px;
+            height: 40px;
+            background: var(--off-white);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: var(--dark);
+            transition: background .2s;
+        }
+
+        .drawer-close:hover {
+            background: #e0e0e0;
+        }
+
+        .li-none-desk,
+        .web-icons {
+            display: none;
+        }
+
+        /* ========= HERO ========= */
+        .at-hero {
+            background: var(--green-dark);
+            color: var(--white);
+            padding: 80px 1.5rem 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .at-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 80% 60% at 70% 40%, rgba(18, 163, 84, .18) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .at-hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: end;
+            gap: 3rem;
+        }
+
+        .at-hero-text {
+            padding-bottom: 64px;
+        }
+
+        .at-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: .45rem;
+            background: rgba(255, 205, 4, .12);
+            border: 1px solid rgba(255, 205, 4, .3);
+            color: var(--yellow);
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            padding: .3rem .75rem;
+            border-radius: 100px;
+            margin-bottom: 1.4rem;
+        }
+
+        .at-hero h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -.02em;
+            margin-bottom: 1rem;
+        }
+
+        .at-hero h1 span {
+            color: var(--yellow);
+        }
+
+        .at-hero-sub {
+            color: rgba(255, 255, 255, .72);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            max-width: 440px;
+            margin-bottom: 2.2rem;
+        }
+
+        .hero-cta-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--yellow);
+            color: var(--green-dark);
+            font-weight: 700;
+            font-size: .9rem;
+            padding: .8rem 1.6rem;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+            transition: background .2s, transform .15s;
+        }
+
+        .btn-primary:hover {
+            background: var(--yellow-dim);
+            transform: translateY(-1px);
+        }
+
+        .btn-ghost {
+            color: rgba(255, 255, 255, .8);
+            font-size: .88rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: .35rem;
+            border-bottom: 1px solid rgba(255, 255, 255, .3);
+            padding-bottom: 2px;
+            transition: color .2s;
+        }
+
+        .btn-ghost:hover {
+            color: var(--white);
+        }
+
+        .at-hero-img {
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+        }
+
+        .at-hero-img img {
+            width: 100%;
+            max-width: 520px;
+            border-radius: 16px 16px 0 0;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* ========= STATS BAR ========= */
+        .stats-bar {
+            background: var(--yellow);
+            padding: 1.5rem;
+        }
+
+        .stats-bar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-num {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: var(--green-dark);
+            line-height: 1;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: .75rem;
+            font-weight: 600;
+            color: var(--green-dark);
+            text-transform: uppercase;
+            letter-spacing: .06em;
+        }
+
+        .stat-divider {
+            width: 1px;
+            height: 36px;
+            background: rgba(7, 72, 40, .2);
+        }
+
+        /* ========= SECTION COMMONS ========= */
+        section {
+            padding: 90px 1.5rem;
+        }
+
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--green-light);
+            margin-bottom: .6rem;
+        }
+
+        .section-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -.02em;
+            color: var(--dark);
+        }
+
+        .section-title span {
+            color: var(--green-dark);
+        }
+
+        /* ========= INTRO SECTION ========= */
+        .intro-section {
+            background: var(--off-white);
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .intro-text .section-title {
+            margin-bottom: 1.2rem;
+        }
+
+        .intro-text p {
+            color: var(--mid-gray);
+            line-height: 1.8;
+            font-size: .97rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .intro-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            background: var(--green-dark);
+            color: var(--white);
+            padding: .4rem 1rem;
+            border-radius: 100px;
+            font-size: .8rem;
+            font-weight: 600;
+            margin-top: .5rem;
+        }
+
+        .intro-visual {
+            position: relative;
+        }
+
+        .intro-visual-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, .1);
+        }
+
+        .intro-visual-card img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .intro-badge {
+            position: absolute;
+            bottom: -18px;
+            left: -18px;
+            background: var(--green-dark);
+            color: var(--white);
+            border-radius: 16px;
+            padding: 1rem 1.4rem;
+            box-shadow: 0 8px 24px rgba(7, 72, 40, .25);
+        }
+
+        .intro-badge strong {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--yellow);
+            display: block;
+        }
+
+        .intro-badge span {
+            font-size: .78rem;
+            opacity: .85;
+        }
+
+        /* ========= FEATURES ========= */
+        .features-section {
+            background: var(--white);
+        }
+
+        .features-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 4rem;
+        }
+
+        .features-header .section-title {
+            margin-top: .4rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .feat-card {
+            background: var(--off-white);
+            border-radius: 16px;
+            padding: 2rem 1.8rem;
+            position: relative;
+            overflow: hidden;
+            transition: transform .25s, box-shadow .25s;
+            border: 1px solid transparent;
+        }
+
+        .feat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, .08);
+            border-color: rgba(7, 72, 40, .1);
+        }
+
+        .feat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--green-dark);
+            border-radius: 4px 0 0 4px;
+            opacity: 0;
+            transition: opacity .25s;
+        }
+
+        .feat-card:hover::before {
+            opacity: 1;
+        }
+
+        .feat-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--green-dark);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.2rem;
+            font-size: 1.15rem;
+            color: var(--yellow);
+        }
+
+        .feat-card h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: .5rem;
+            color: var(--dark);
+        }
+
+        .feat-card p {
+            font-size: .88rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* ========= WIND SECTION ========= */
+        .wind-section {
+            background: var(--green-dark);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wind-section::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 205, 4, .06) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .wind-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .wind-text .section-label {
+            color: var(--yellow);
+            opacity: .9;
+        }
+
+        .wind-text .section-title {
+            color: var(--white);
+            margin-bottom: 1.2rem;
+        }
+
+        .wind-text p {
+            color: rgba(255, 255, 255, .72);
+            line-height: 1.8;
+            font-size: .97rem;
+            margin-bottom: 2rem;
+        }
+
+        .wind-specs {
+            display: flex;
+            flex-direction: column;
+            gap: .9rem;
+        }
+
+        .wind-spec {
+            display: flex;
+            align-items: flex-start;
+            gap: .9rem;
+        }
+
+        .wind-spec-icon {
+            width: 32px;
+            height: 32px;
+            background: rgba(255, 205, 4, .12);
+            border: 1px solid rgba(255, 205, 4, .2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--yellow);
+            font-size: .8rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .wind-spec-content strong {
+            display: block;
+            font-size: .92rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: .1rem;
+        }
+
+        .wind-spec-content span {
+            font-size: .82rem;
+            color: rgba(255, 255, 255, .55);
+        }
+
+        .wind-visual {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .wind-big-num {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(4rem, 9vw, 7rem);
+            font-weight: 800;
+            line-height: 1;
+            color: var(--yellow);
+            letter-spacing: -.04em;
+        }
+
+        .wind-big-label {
+            font-size: .95rem;
+            color: rgba(255, 255, 255, .65);
+            letter-spacing: .03em;
+        }
+
+        .wind-bar {
+            height: 4px;
+            background: rgba(255, 255, 255, .1);
+            border-radius: 100px;
+            overflow: hidden;
+            margin-top: .5rem;
+        }
+
+        .wind-bar-fill {
+            height: 100%;
+            width: 85%;
+            background: linear-gradient(90deg, var(--green-light), var(--yellow));
+            border-radius: 100px;
+        }
+
+        .wind-compare {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .compare-item {
+            background: rgba(255, 255, 255, .06);
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: 12px;
+            padding: 1rem;
+        }
+
+        .compare-item .label {
+            font-size: .72rem;
+            color: rgba(255, 255, 255, .5);
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            margin-bottom: .35rem;
+        }
+
+        .compare-item .value {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .compare-item.highlight .value {
+            color: var(--yellow);
+        }
+
+        /* ========= MATERIALS SECTION ========= */
+        .materials-section {
+            background: var(--off-white);
+        }
+
+        .materials-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .material-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.4rem;
+            margin-top: 1.8rem;
+        }
+
+        .material-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.2rem 1.4rem;
+            background: var(--white);
+            border-radius: 14px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, .04);
+            transition: box-shadow .25s;
+        }
+
+        .material-row:hover {
+            box-shadow: 0 6px 24px rgba(0, 0, 0, .08);
+        }
+
+        .material-check {
+            width: 28px;
+            height: 28px;
+            background: var(--green-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--yellow);
+            font-size: .7rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .material-row strong {
+            display: block;
+            font-size: .92rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: .2rem;
+        }
+
+        .material-row p {
+            font-size: .83rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .brand-logos {
+            margin-top: 2rem;
+            padding: 1.4rem 1.6rem;
+            background: var(--white);
+            border-radius: 14px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, .04);
+        }
+
+        .brand-logos p {
+            font-size: .72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .1em;
+            color: var(--text-light);
+            margin-bottom: .9rem;
+        }
+
+        .brand-logo-row {
+            display: flex;
+            align-items: center;
+            gap: 1.6rem;
+            flex-wrap: wrap;
+        }
+
+        .brand-logo-row img {
+            height: 28px;
+            width: 75px;
+            object-fit: contain;
+            filter: grayscale(20%);
+            opacity: .85;
+            transition: opacity .2s, filter .2s;
+        }
+
+        .brand-logo-row img:hover {
+            opacity: 1;
+            filter: none;
+        }
+
+        .materials-right {
+            position: relative;
+        }
+
+        .materials-img-wrap {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, .12);
+        }
+
+        .materials-img-wrap img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* ========= PROCESS SECTION ========= */
+        .process-section {
+            background: var(--white);
+        }
+
+        .process-header {
+            text-align: center;
+            max-width: 580px;
+            margin: 0 auto 4rem;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            position: relative;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 28px;
+            left: 10%;
+            width: 80%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--green-dark), var(--green-light));
+            opacity: .15;
+            z-index: 0;
+        }
+
+        .process-step {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .step-num {
+            width: 56px;
+            height: 56px;
+            background: var(--green-dark);
+            color: var(--yellow);
+            font-family: 'Syne', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 800;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.2rem;
+            box-shadow: 0 4px 16px rgba(7, 72, 40, .3);
+        }
+
+        .process-step h4 {
+            font-family: 'Syne', sans-serif;
+            font-size: .95rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: .4rem;
+        }
+
+        .process-step p {
+            font-size: .82rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* ========= CTA SECTION ========= */
+        .cta-section {
+            background: var(--yellow);
+            padding: 80px 1.5rem;
+        }
+
+        .cta-inner {
+            max-width: 720px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .cta-inner h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-weight: 800;
+            color: var(--green-dark);
+            line-height: 1.15;
+            letter-spacing: -.02em;
+            margin-bottom: 1rem;
+        }
+
+        .cta-inner p {
+            color: rgba(7, 72, 40, .7);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .btn-dark {
+            background: var(--green-dark);
+            color: var(--white);
+            font-weight: 700;
+            font-size: .92rem;
+            padding: .9rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            transition: background .2s, transform .15s;
+        }
+
+        .btn-dark:hover {
+            background: var(--green-mid);
+            transform: translateY(-2px);
+        }
+
+        .trust-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: 1.8rem;
+            font-size: .8rem;
+            font-weight: 600;
+            color: rgba(7, 72, 40, .65);
+        }
+
+        .trust-row span::before {
+            content: '✓ ';
+        }
+
+        /* ========= FOOTER ========= */
+        footer {
+            background: #0a0f0c;
+            color: var(--white);
+            padding: 60px 1.5rem 40px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, .06);
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .logo-footer img {
+            height: 48px;
+            margin-bottom: 1rem;
+        }
+
+        footer>.footer-inner>p {
+            color: rgba(255, 255, 255, .65);
+            font-size: .88rem;
+            max-width: 380px;
+            margin: 0 auto 1.8rem;
+        }
+
+        .footer-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .footer-icons a {
+            width: 38px;
+            height: 38px;
+            background: rgba(255, 255, 255, .1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            font-size: .85rem;
+            transition: background .2s;
+        }
+
+        .footer-icons a:hover {
+            background: rgba(255, 255, 255, .2);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+            text-align: left;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, .1);
+        }
+
+        .footer-bottom h4 {
+            font-size: .8rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .5);
+            margin-bottom: .8rem;
+        }
+
+        .footer-bottom ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: .4rem;
+        }
+
+        .footer-bottom ul li a {
+            color: rgba(255, 255, 255, .75);
+            text-decoration: none;
+            font-size: .85rem;
+            transition: color .2s;
+        }
+
+        .footer-bottom ul li a:hover {
+            color: var(--yellow);
+        }
+
+        .footer-contact {
+            color: rgba(255, 255, 255, .75);
+            font-size: .85rem;
+            line-height: 1.9;
+        }
+
+        .footer-contact a {
+            color: var(--yellow);
+            text-decoration: none;
+        }
+
+        /* ========= SCROLL ANIMATION ========= */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity .65s ease, transform .65s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* ========= RESPONSIVE ========= */
+        @media (max-width: 900px) {
+
+            .at-hero-inner,
+            .intro-grid,
+            .wind-inner,
+            .materials-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .at-hero {
+                padding: 60px 1.5rem 0;
+            }
+
+            .at-hero-text {
+                padding-bottom: 40px;
+            }
+
+            .at-hero-img {
+                justify-content: center;
+            }
+
+            .at-hero-img img {
+                max-width: 100%;
+                border-radius: 12px;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .process-steps::before {
+                display: none;
+            }
+
+            .intro-badge {
+                position: static;
+                margin-top: 1rem;
+                display: inline-block;
+            }
+
+            .wind-visual {
+                margin-top: 2rem;
+            }
+
+            .stat-divider {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 1.25rem;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .wind-compare {
+                grid-template-columns: 1fr;
+            }
+
+            .nav__navigation {
+                display: none !important;
+            }
+
+            .menuBtn {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav class="visible" style="background-color: white;">
+        <div class="nav-container container">
+            <a class="logo" href="https://greenideas.in/">
+                <img src="./assets/media/logo.webp" alt="Green Ideas Solar Logo"
+                    onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-family:Syne,sans-serif;font-size:1.3rem;font-weight:800;color:#074828;\'>Green Ideas</span>'">
+            </a>
+            <div class="nav__navigation">
+                <ul>
+                    <li><a href="https://greenideas.in">Home</a></li>
+                    <li><a href="#why-aero">Why AERO TUFF™</a></li>
+                    <li><a href="#wind-section">Wind-Proof</a></li>
+                    <li><a href="#materials">Materials</a></li>
+                    <li><a href="#consult-cta">Get a Quote</a></li>
+                </ul>
+            </div>
+            <button class="menuBtn" id="menuBtn" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+        <button class="drawer-close" id="drawerClose" aria-label="Close menu">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <ul>
+            <li><a href="https://greenideas.in" id="drawerLink">Home</a></li>
+            <li><a href="#why-aero" id="drawerLink">Why AERO TUFF™</a></li>
+            <li><a href="#wind-section" id="drawerLink">Wind-Proof</a></li>
+            <li><a href="#materials" id="drawerLink">Materials</a></li>
+        </ul>
+        <a href="#consult-cta" class="drawer-cta">Book a Free Consultation →</a>
+        <div class="drawer-bottom">
+            <div class="drawer-contact">
+                <strong style="color:var(--dark); display:block; margin-bottom:.4rem;">Green Ideas</strong>
+                <a href="tel:+919011221800">+91 9011221800</a><br>
+                Shegaon, Maharashtra
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <section class="at-hero">
+        <div class="at-hero-inner">
+            <div class="at-hero-text">
+                <div class="at-eyebrow"><i class="fa-solid fa-shield-halved"></i> Flagship Mounting System</div>
+                <h1>Smart. Strong.<br><span>Storm-Proof.</span></h1>
+                <p class="at-hero-sub">
+                    Introducing <strong>AERO TUFF™</strong> — Green Ideas' aerodynamically engineered solar mounting
+                    structure, purpose-built for Indian homes. Precision-drilled with Hilti chemical anchoring. Zero
+                    roof damage. Zero leakage. Zero compromise.
+                </p>
+                <div class="hero-cta-row">
+                    <a href="#consult-cta" class="btn-primary">Get a Free Quote <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#why-aero" class="btn-ghost">See how it works <i class="fa-solid fa-chevron-down"></i></a>
+                </div>
+            </div>
+            <div class="at-hero-img">
+                <img src="./assets/media/the_structure.webp" alt="AERO TUFF Solar Mounting Structure"
+                    onerror="this.src='https://greenideas.in/assets/media/the_structure.webp'">
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS BAR -->
+    <div class="stats-bar">
+        <div class="stats-bar-inner">
+            <div class="stat-item">
+                <span class="stat-num">170<sub style="font-size:.55em;">kmph</sub></span>
+                <span class="stat-label">Wind Resistance</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-num">100%</span>
+                <span class="stat-label">Corrosion-Proof</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-num">Hilti</span>
+                <span class="stat-label">Chemical Anchoring</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-num">25 Yr</span>
+                <span class="stat-label">Structure Lifespan</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== INTRO ===== -->
+    <section class="intro-section" id="why-aero">
+        <div class="section-inner">
+            <div class="intro-grid">
+                <div class="intro-text fade-up">
+                    <div class="section-label">Why AERO TUFF™</div>
+                    <h2 class="section-title">Built different.<br><span>By design.</span></h2>
+                    <p>Traditional solar structures leave your roof vulnerable — exposed drill holes filled with
+                        ordinary grout, rusting bolts, and messy field welds that crack and seep over time. AERO TUFF™
+                        was engineered to change all of that.</p>
+                    <p>Where drilling is required, we use <strong>Hilti chemical anchoring</strong> — a precision system
+                        that bonds at a molecular level, completely sealing the entry point against moisture. Your roof
+                        stays watertight, structurally intact, and protected for decades.</p>
+                    <div class="intro-tag"><i class="fa-solid fa-circle-check" style="color:var(--yellow)"></i>
+                        Exclusively designed for residential rooftops</div>
+                </div>
+                <div class="intro-visual fade-up">
+                    <div class="intro-visual-card">
+                        <img src="./assets/media/the_structure.webp" alt="AERO TUFF Structure installed"
+                            onerror="this.src='https://greenideas.in/assets/media/the_structure.webp'"
+                            style="aspect-ratio:4/3; object-fit:cover;">
+                    </div>
+                    <div class="intro-badge">
+                        <strong>AERO TUFF™</strong>
+                        <span>Flagship Structure · Green Ideas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FEATURES ===== -->
+    <section class="features-section">
+        <div class="section-inner">
+            <div class="features-header fade-up">
+                <div class="section-label">What Sets It Apart</div>
+                <h2 class="section-title">Engineering you can <span>see and trust</span></h2>
+            </div>
+            <div class="features-grid">
+                <div class="feat-card fade-up">
+                    <div class="feat-icon"><i class="fa-solid fa-industry"></i></div>
+                    <h3>Factory-Built Precision</h3>
+                    <p>Pre-fabricated under controlled conditions for 100% dimensional accuracy. No field cutting, no
+                        human error — every component fits exactly as designed.</p>
+                </div>
+                <div class="feat-card fade-up">
+                    <div class="feat-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <h3>Modular & Ready</h3>
+                    <p>Plug-and-play design means your system is installed faster and neater than conventional methods.
+                        Less time on your roof, more time saving on your bills.</p>
+                </div>
+                <div class="feat-card fade-up">
+                    <div class="feat-icon"><i class="fa-solid fa-shield-virus"></i></div>
+                    <h3>100% Rust-Proof</h3>
+                    <p>Full corrosion resistance through hot-dip galvanising and premium virgin steel — engineered to
+                        handle India's monsoons, heat cycles, and coastal air.</p>
+                </div>
+                <div class="feat-card fade-up">
+                    <div class="feat-icon"><i class="fa-solid fa-droplet-slash"></i></div>
+                    <h3>Zero Leakage, Guaranteed</h3>
+                    <p>We use <strong>Hilti chemical anchoring</strong> — a precision two-component resin system that
+                        seals every drill point from the inside out. No water path. No seepage. Your roof stays bone
+                        dry.</p>
+                </div>
+                <div class="feat-card fade-up">
+                    <div class="feat-icon"><i class="fa-solid fa-wind"></i></div>
+                    <h3>Aerodynamic Profile</h3>
+                    <p>Optimised angles reduce wind uplift and drag forces. The structure works with the wind, not
+                        against it — delivering consistent performance through every season.</p>
+                </div>
+                <div class="feat-card fade-up">
+                    <div class="feat-icon"><i class="fa-solid fa-circle-check"></i></div>
+                    <h3>Fault-Free Installation</h3>
+                    <p>Our proprietary installation protocol leaves zero margin for on-site errors. What goes on your
+                        roof is verified, checked, and guaranteed before we leave.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WIND PROOF ===== -->
+    <section class="wind-section" id="wind-section">
+        <div class="section-inner">
+            <div class="wind-inner">
+                <div class="wind-text fade-up">
+                    <div class="section-label">Structural Integrity</div>
+                    <h2 class="section-title">Built for the storm.<br>Engineered for peace of mind.</h2>
+                    <p>India's weather doesn't give warnings. Cyclones, summer squalls, and intense monsoon gusts are a
+                        reality for millions of homeowners. AERO TUFF™ is built to handle them all — and then some.</p>
+                    <div class="wind-specs">
+                        <div class="wind-spec">
+                            <div class="wind-spec-icon"><i class="fa-solid fa-wind"></i></div>
+                            <div class="wind-spec-content">
+                                <strong>Withstands 170 kmph sustained winds</strong>
+                                <span>Tested beyond cyclone-grade wind load specifications</span>
+                            </div>
+                        </div>
+                        <div class="wind-spec">
+                            <div class="wind-spec-icon"><i class="fa-solid fa-anchor"></i></div>
+                            <div class="wind-spec-content">
+                                <strong>Hilti chemical anchoring</strong>
+                                <span>Resin-bonded fixings that seal the drill point — watertight, pull-resistant,
+                                    permanent</span>
+                            </div>
+                        </div>
+                        <div class="wind-spec">
+                            <div class="wind-spec-icon"><i class="fa-solid fa-maximize"></i></div>
+                            <div class="wind-spec-content">
+                                <strong>Aerodynamically optimised geometry</strong>
+                                <span>Panel tilt and framing designed to minimise wind uplift forces</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wind-visual fade-up">
+                    <div class="wind-big-num">170</div>
+                    <div class="wind-big-label">kmph rated wind resistance</div>
+                    <div class="wind-bar">
+                        <div class="wind-bar-fill"></div>
+                    </div>
+                    <div class="wind-compare" style="margin-top:1.8rem;">
+                        <div class="compare-item">
+                            <div class="label">Typical Structure</div>
+                            <div class="value">~80 kmph</div>
+                        </div>
+                        <div class="compare-item highlight">
+                            <div class="label">AERO TUFF™</div>
+                            <div class="value">170 kmph</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MATERIALS ===== -->
+    <section class="materials-section" id="materials">
+        <div class="section-inner">
+            <div class="materials-grid">
+                <div class="fade-up">
+                    <div class="section-label">Material Quality</div>
+                    <h2 class="section-title">Only the finest <span>steel makes the cut</span></h2>
+                    <div class="material-list">
+                        <div class="material-row">
+                            <div class="material-check"><i class="fa-solid fa-check"></i></div>
+                            <div>
+                                <strong>Virgin Steel Only</strong>
+                                <p>No recycled or secondary-grade metal — ever. Every structural member uses only
+                                    certified prime steel for maximum strength and consistency.</p>
+                            </div>
+                        </div>
+                        <div class="material-row">
+                            <div class="material-check"><i class="fa-solid fa-check"></i></div>
+                            <div>
+                                <strong>Hot-Dip Galvanised Finish</strong>
+                                <p>Deep corrosion protection bonded to every surface. AERO TUFF™ won't rust, flake, or
+                                    degrade — even after 25 years of exposure.</p>
+                            </div>
+                        </div>
+                        <div class="material-row">
+                            <div class="material-check"><i class="fa-solid fa-check"></i></div>
+                            <div>
+                                <strong>Hilti Chemical Anchoring System</strong>
+                                <p>Every drill point is sealed with Hilti's precision two-component resin — forming a
+                                    watertight bond that locks out moisture and eliminates any risk of leakage,
+                                    permanently.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="brand-logos">
+                        <p>Certified Steel from</p>
+                        <div class="brand-logo-row">
+                            <img src="./assets/media/jsw.webp" alt="JSW Steel">
+                            <img src="./assets/media/essar.webp" alt="Essar Steel">
+                            <img src="./assets/media/tatasteel.webp" alt="Tata Steel">
+                        </div>
+                    </div>
+                </div>
+                <div class="materials-right fade-up">
+                    <div class="materials-img-wrap">
+                        <img src="./assets/media/the_structure.webp" alt="AERO TUFF steel quality close-up"
+                            onerror="this.src='https://greenideas.in/assets/media/the_structure.webp'"
+                            style="aspect-ratio:3/4; object-fit:cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROCESS ===== -->
+    <section class="process-section">
+        <div class="section-inner">
+            <div class="process-header fade-up">
+                <div class="section-label">How It Works</div>
+                <h2 class="section-title">From factory to <span>your rooftop</span></h2>
+            </div>
+            <div class="process-steps">
+                <div class="process-step fade-up">
+                    <div class="step-num">01</div>
+                    <h4>Site Survey</h4>
+                    <p>Our team evaluates your roof load capacity, orientation, and shadow points for a perfect fit.</p>
+                </div>
+                <div class="process-step fade-up">
+                    <div class="step-num">02</div>
+                    <h4>Precision Fabrication</h4>
+                    <p>Your AERO TUFF™ structure is custom-cut and pre-assembled at our facility to exact
+                        specifications.</p>
+                </div>
+                <div class="process-step fade-up">
+                    <div class="step-num">03</div>
+                    <h4>Hilti Chemical Anchoring</h4>
+                    <p>Precision drilled and filled with Hilti resin — sealing every fixing point for a watertight,
+                        pull-resistant hold that lasts decades.</p>
+                </div>
+                <div class="process-step fade-up">
+                    <div class="step-num">04</div>
+                    <h4>Panel Installation</h4>
+                    <p>Panels click into the modular frame. Clean, fast, and structurally verified before we leave.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta-section" id="consult-cta">
+        <div class="cta-inner fade-up">
+            <h2>Ready for a structure that's built to last?</h2>
+            <p>Get a free consultation and site assessment. Our team will walk you through system sizing, estimated
+                savings, and your AERO TUFF™ installation — at no cost and zero obligation.</p>
+            <a href="https://greenideas.in/go-solar.html" class="btn-dark">Book Your Free Consultation <i
+                    class="fa-solid fa-arrow-right"></i></a>
+            <div class="trust-row">
+                <span>Free site survey</span>
+                <span>No sales pressure</span>
+                <span>5-year maintenance</span>
+                <span>Government subsidy support</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-inner">
+            <div class="logo-footer">
+                <img src="./assets/media/logo.webp" alt="GreenIdeas Solar Logo"
+                    onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<span style=\'font-family:Syne,sans-serif;font-size:1.4rem;font-weight:800;color:#ffcd04;\'>Green Ideas</span>')">
+            </div>
+            <p>Rooftop solar made simple. We don't just sell solar — we provide peace of mind.</p>
+
+            <div class="footer-icons">
+                <a href="https://m.facebook.com/61569214233764/" target="_blank"><i
+                        class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/greenideas_india" target="_blank"><i
+                        class="fa-brands fa-instagram"></i></a>
+                <a href="https://linkedin.com/company/greenideas" target="_blank"><i
+                        class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://www.youtube.com/@greenideasindia" target="_blank"><i
+                        class="fa-brands fa-youtube"></i></a>
+            </div>
+
+            <div class="footer-bottom">
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="https://greenideas.in">Home</a></li>
+                        <li><a href="https://greenideas.in/go-solar.html">Book a Consultation</a></li>
+                        <li><a href="/go-solar-akola.html">Solar in Akola</a></li>
+                        <li><a href="/go-solar-shegaon.html">Solar in Shegaon</a></li>
+                        <li><a href="/go-solar-khamgaon.html">Solar in Khamgaon</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <b>Contact Us</b><br>
+                    <a href="tel:+919011221800">+91 9011221800</a><br>
+                    <a href="mailto:greenideasindia@gmail.com">greenideasindia@gmail.com</a>
+                    <p style="color:rgba(255,255,255,.55); font-size:.82rem; margin-top:.6rem;">
+                        Near Nayara Petrol Pump, Ch. Sambhaji Maharaj Chauk,<br>
+                        Balapur Road, Shegaon, Maharashtra 444 203
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ── Scroll-triggered fade-up animations ──
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(el => {
+                if (el.isIntersecting) {
+                    el.target.classList.add('visible');
+                    observer.unobserve(el.target);
+                }
+            });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        // ── Hide nav on scroll down, reveal on scroll up ──
+        const nav = document.querySelector('nav.visible');
+        let lastScrollY = window.scrollY;
+        let ticking = false;
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const currentScrollY = window.scrollY;
+                    if (currentScrollY > lastScrollY && currentScrollY > 80) {
+                        // scrolling down — hide
+                        nav.classList.add('nav-hidden');
+                    } else {
+                        // scrolling up — show
+                        nav.classList.remove('nav-hidden');
+                    }
+                    lastScrollY = currentScrollY;
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+
+        // Mobile drawer toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const drawer = document.getElementById('mobileDrawer');
+
+        if (menuBtn && drawer) {
+            const drawerClose = document.getElementById('drawerClose');
+
+            function closeDrawer() {
+                drawer.classList.remove('open');
+                menuBtn.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+
+            menuBtn.addEventListener('click', () => {
+                const isOpen = drawer.classList.toggle('open');
+                menuBtn.classList.toggle('open', isOpen);
+                document.body.style.overflow = isOpen ? 'hidden' : '';
+                // Always keep nav visible when drawer is open
+                if (isOpen) nav.classList.remove('nav-hidden');
+            });
+
+            if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
+
+            // Close drawer when any link inside it is clicked
+            drawer.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', closeDrawer);
+            });
+        }
+    </script>
+
+</body>
+
+</html>
