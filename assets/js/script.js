@@ -382,6 +382,25 @@ if (faqItems.length > 0) {
   });
 }
 
+// Google Badge Animation Trigger
+const observerOptions = {
+  root: null,
+  threshold: 0.3 // Trigger when 30% of the element is visible
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      // Stop observing once animation has played
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+const badge = document.getElementById('reviewBadge');
+observer.observe(badge);
+
 // Bill Calculator
 const billButtons = document.querySelectorAll('.bill-button');
 const billInput = document.getElementById('electricityBill');
